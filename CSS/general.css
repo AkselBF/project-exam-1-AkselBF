@@ -1,0 +1,38 @@
+@import url(home.css);
+
+/*
+  Body (For every page)
+*/
+
+body {
+  background-color: #fafafa;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*
+  General font
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+/* font-family: 'Inter', sans-serif; */
+
+
+/*
+  Font styles
+*/
+
+h2, h3, h4 {
+  font-family: 'Comfortaa', cursive;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+}

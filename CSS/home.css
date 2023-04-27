@@ -1,0 +1,160 @@
+
+/*
+  Menu and body
+*/
+
+@import url(general.css);
+@import url(menu.css);
+
+
+/*
+  Font
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap');
+/* font-family: 'Comfortaa', cursive; */
+
+
+/*
+  Main
+*/
+
+main {
+  justify-content: center;
+  text-align: center;
+}
+
+.home_title {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+  margin: 40px auto 30px auto;
+}
+
+/* Setting up the container */
+.home_intro {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top intro */
+.intro_description {
+  background: linear-gradient(#015180, #001724);
+  padding: 30px 0 60px 0;
+}
+
+.description_text {
+  color: #ffffff;
+  width: 60%;
+  margin: 10px auto 10px auto;
+}
+
+#description_text_1 {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+#description_text_3 {
+  margin-top: 40px;
+  font-weight: 400;
+  font-family: 'Comfortaa', cursive;
+}
+
+/* Top image */
+.intro_image {
+  width: 100%;
+}
+
+
+/*
+  Blogs section
+*/
+
+/* Blog section title */
+
+.home_latest {
+  text-align: left;
+  margin: 60px auto 3px 26px;
+}
+
+.line_1 {
+  width: 80px;
+  margin: 0 0 5px 26px;
+}
+
+.line_1::after {
+  content: " ";
+  display: block;
+  border-bottom: 4px solid #002A42;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.line_2 {
+  width: 50px;
+  margin: 0 0 40px 26px;
+}
+
+.line_2::after {
+  content: " ";
+  display: block;
+  border-bottom: 3px solid #0074D9;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+
+/* Blog posts */
+
+.blog {
+  width: 338px;
+  margin: auto auto 40px auto;
+}
+
+.blog_image {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.blog_description {
+  background-color: #141414;
+  color: #ffffff;
+  padding: 20px 0 30px 0;
+  margin-top: -5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.blog_desc_text {
+  margin: auto auto 30px auto;
+}
+
+.blog_line {
+  width: 260px;
+  margin: auto;
+}
+
+.blog_line::after {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #ffffff;
+}
+
+.blog_date_and_more {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.blog_desc_date {
+  width: 120px;
+  text-align: left;
+  margin: auto;
+  padding-left: 15px;
+}
+
+.blog_desc_more {
+  width: 120px;
+  text-align: right;
+  margin: auto;
+  padding-right: 15px;
+}
