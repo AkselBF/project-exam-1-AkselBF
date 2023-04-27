@@ -107,7 +107,7 @@ main {
 
 .blog {
   width: 300px;
-  margin: auto auto 40px auto;
+  margin: auto auto 60px auto;
 }
 
 .blog_image {
@@ -158,4 +158,28 @@ main {
   text-align: right;
   margin: auto;
   padding-right: 15px;
+}
+
+
+/* Carousel dots */
+
+
+/* Footer */
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0 80px 0;
+}
+
+.footer_logos {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-brands {
+  margin: 30px 10px 10px 10px;
 }
