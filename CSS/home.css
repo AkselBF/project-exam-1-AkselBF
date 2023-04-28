@@ -64,13 +64,41 @@ main {
   width: 100%;
 }
 
+/* Media querries for top description and image */
+@media (min-width: 700px) {
+  .home_intro {
+    flex-direction: row-reverse;
+  }
+
+  .intro_image, .intro_description {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .home_intro {
+    height: 400px;
+  }
+
+  .description_text {
+    width: 240px;
+  }
+
+  #description_text_1 {
+    margin-top: 40px;
+  }
+
+  #description_text_3 {
+    margin-top: 50px;
+  }
+}
+
 
 /*
   Blogs section
 */
 
 /* Blog section title */
-
 .home_latest {
   text-align: left;
   margin: 60px auto 3px 35px;
@@ -104,13 +132,17 @@ main {
 
 
 /* Blog carousel */
-
 .home_blogs {
   width: 85%;
-  height: 336;
+  height: 360px;
   overflow: auto;
   white-space: nowrap;
   margin: auto;
+}
+
+.home_blogs:hover {
+  height: 380px;
+  transition: 0.5s;
 }
 
 .home_blogs .blog {
@@ -120,10 +152,15 @@ main {
 
 
 /* Blog posts */
-
 .blog {
   width: 300px;
   margin: auto auto 15px auto;
+}
+
+.blog:hover {
+  transform: scale(1.05);
+  transform-origin: top;
+  transition: 0.5s;
 }
 
 .blog_image {
@@ -177,17 +214,72 @@ main {
 }
 
 
-/* Carousel dots */
+/* Media querries for the carousel */
+@media (min-width: 700px) {
+  .blog {
+    margin: auto 10px 15px 10px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .blog {
+    margin: auto 20px 15px 20px;
+  }
+}
 
 
-/* Footer */
+/* Carousel dots and arrows*/
+.home_carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.fa-chevron-left {
+  color: #000000;
+  margin: 50px auto 20px auto;
+}
+
+.carousel_buttons {
+  text-decoration: none;
+  margin: auto 30px auto 30px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 55px 10px 20px 10px;
+  background-color: #AAC7DF;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.dot:hover {
+  background-color: #002A42;
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+.scale {
+  animation-name: slide;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide {}
+
+
+/* 
+  Footer 
+*/
 
 footer {
   background-color: #000000;
   color: #ffffff;
   justify-content: center;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 70px;
   padding: 60px 0 80px 0;
 }
 
@@ -199,4 +291,21 @@ footer {
 
 .fa-brands {
   margin: 30px 10px 10px 10px;
+}
+
+/* Media querries for footer */
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 50px 40px 50px;
+  }
+
+  .footer_logos {
+    margin-left: -45px;
+  }
+
+  .fa-brands {
+    margin: auto auto auto 30px;
+  }
 }

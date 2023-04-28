@@ -12,7 +12,7 @@
   z-index: 100;
 }
 
-/*Museum logo*/
+/*Drop by Drop logo*/
 .logo {
   display: inline-block;
   width: 90px;
@@ -55,7 +55,7 @@
   overflow: hidden;
   background-color: #ffffff;
   right: 0;
-  top: 115px;
+  top: 80px;
   max-height: 0;
   transition: max-height .5s ease-out;
   z-index: 100;
@@ -92,7 +92,7 @@
 /*Media querries for menu (For mobile)*/
 @media (max-width: 999px) {
   .navbar {
-    padding: 10px 10px 10px 10px;
+    padding: 0 10px 0 10px;
   }
 
   .navigation {
@@ -100,8 +100,8 @@
   }
 
   .logo {
-    width: 125px;
-    height: 80px;
+    width: 100px;
+    height: 65px;
   }
 
   .fa-arrow-left-long {
@@ -153,7 +153,7 @@
 .burgerline::before,
 .burgerline::after {
   background:#000000;
-  content: '';
+  content: ' ';
   display: block;
   height: 100%;
   width: 100%;
@@ -174,17 +174,17 @@
 /*Media querries for the menu burgerlines*/
 @media (max-width: 999px) {
   .burgerline {
-    height: 9px;
-    width: 80px;
-    top: 10px;
+    height: 7px;
+    width: 65px;
+    top: 4px;
   }
 
   .burgerline::before {
-    top: 22px;
+    top: 18px;
   }
 
   .burgerline::after {
-    top: -22px;
+    top: -18px;
   }
 }
 

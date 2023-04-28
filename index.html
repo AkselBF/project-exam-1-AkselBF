@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="Description" content="This is an introduction to the website">
+  <meta name="description" content="Drop by Drop is an informative website about water and how it's misused">
   <title>Home page</title>
   <script src="https://kit.fontawesome.com/26fd6b155e.js" crossorigin="anonymous"></script>
 
@@ -33,24 +33,39 @@
   </header>
 
   <main>
+    <!--
+      Website title
+    -->
     <h1 class="home_title">Drop by Drop</h1>
 
+    <!--
+      Separate text and image
+    -->
     <div class="home_intro">
       <div class="intro_description">
         <h3 class="description_text" id="description_text_1">The most important resource</h3>
         <h2 class="description_text" id="description_text_2">Water</h2>
         <p class="description_text" id="description_text_3">Learn how to save water, drop by drop</p>
       </div>
-      <img class="intro_image" src="Images/underwater.png">
+      <img class="intro_image" src="Images/underwater.png" 
+      alt="Image of water for introduction">
     </div>
 
     <h2 class="home_latest">Latest posts</h2>
     <div class="line_1"></div>
     <div class="line_2"></div>
 
+    <!--
+      Blog posts
+    -->
     <div class="home_blogs">
+
+      <!--
+        Indiviual blogs
+      -->
       <div class="blog">
-        <img class="blog_image" src="Images/water.png">
+        <img class="blog_image" src="Images/water.png"
+        alt="Image for blog">
         <div class="blog_description">
           <h3 class="blog_desc_text">Drinking water reduction</h3>
           <div class="blog_line"></div>
@@ -62,7 +77,8 @@
       </div>
 
       <div class="blog">
-        <img class="blog_image" src="Images/water.png">
+        <img class="blog_image" src="Images/water.png"
+        alt="image for blog">
         <div class="blog_description">
           <h3 class="blog_desc_text">Drinking water reduction</h3>
           <div class="blog_line"></div>
@@ -74,7 +90,8 @@
       </div>
 
       <div class="blog">
-        <img class="blog_image" src="Images/water.png">
+        <img class="blog_image" src="Images/water.png"
+        alt="image for blog">
         <div class="blog_description">
           <h3 class="blog_desc_text">Drinking water reduction</h3>
           <div class="blog_line"></div>
@@ -85,6 +102,25 @@
         </div>
       </div>
       
+    </div>
+
+    <!--
+      next & previous buttons and dots
+    -->
+    <div class="home_carousel">
+      <a class="carousel_buttons" id="prev" href="#">
+        <i class="fa-solid fa-chevron-left fa-2xl"></i>
+      </a>
+
+      <div class="carousel_dots">
+        <span class="dot" id="dot_1"></span>
+        <span class="dot" id="dot_2"></span>
+        <span class="dot" id="dot_3"></span>
+      </div>
+
+      <a class="carousel_buttons" id="next" href="#">
+        <i class="fa-solid fa-chevron-left fa-rotate-180 fa-2xl"></i>
+      </a>
     </div>
   </main>
 
