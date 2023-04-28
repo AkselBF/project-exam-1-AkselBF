@@ -142,7 +142,7 @@ main {
 
 .home_blogs:hover {
   height: 380px;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 .home_blogs .blog {
@@ -160,7 +160,7 @@ main {
 .blog:hover {
   transform: scale(1.05);
   transform-origin: top;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 .blog_image {

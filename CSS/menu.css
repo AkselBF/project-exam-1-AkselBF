@@ -74,12 +74,13 @@
 .menu a {
   display: block;
   text-decoration: none;
+  font-size: 1.2em;
   padding: 25px 50px 25px 50px;
   color: #000000;
 }
 
 .menu li:hover {
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   border-radius: 10px;
 }
 
