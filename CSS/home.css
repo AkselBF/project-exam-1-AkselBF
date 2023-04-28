@@ -229,7 +229,7 @@ main {
 
 
 /* Carousel dots and arrows*/
-.home_carousel {
+.carousel {
   display: flex;
   flex-direction: row;
   justify-content: center;
