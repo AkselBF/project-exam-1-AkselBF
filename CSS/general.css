@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  justify-content: center;
+  text-align: center;
+}
 
 /*
   General font
