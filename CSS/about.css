@@ -17,3 +17,63 @@
 /*
   Main
 */
+
+.about_intro {
+  justify-content: center;
+}
+
+.about_title {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+  margin: 40px auto 30px auto;
+}
+
+.about_intro {
+  width: 70%;
+  margin: 10px auto 30px auto;
+}
+
+.intro_text {
+  margin: 15px auto 15px auto;
+}
+
+
+/* 
+  Footer 
+*/
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+  padding: 60px 0 80px 0;
+}
+
+.footer_logos {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-brands {
+  margin: 30px 10px 10px 10px;
+}
+
+/* Media querries for footer */
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 50px 40px 50px;
+  }
+
+  .footer_logos {
+    margin-left: -45px;
+  }
+
+  .fa-brands {
+    margin: auto auto auto 30px;
+  }
+}
