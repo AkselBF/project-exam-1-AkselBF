@@ -36,7 +36,55 @@
     <p class="big_text">Send us an email</p>
     <p class="small_text">Get an answer within the week</p>
 
-    <div class="contact_textboxes"></div>
+    <form>
+      <div class="contact_textboxes">
+        <label>
+          <input
+            name="fullname"
+            class="input_box"
+            id="input_name"
+            placeholder="Full name"
+          />
+        </label>
+        <div class="from_error" id="fullname_error"></div>
+
+        <label>
+          <input
+            name="email"
+            class="input_box"
+            id="input_mail"
+            placeholder="E-mail"
+          />
+        </label>
+        <div class="from_error" id="email_error"></div>
+
+        <label>
+          <input
+            name="subject"
+            class="input_box"
+            id="input_subject"
+            placeholder="Subject"
+          />
+        </label>
+        <div class="from_error" id="subject_error"></div>
+
+        <label>
+          <input
+            name="message"
+            class="input_box"
+            id="input_message"
+            placeholder="Message"
+          />
+        </label>
+        <div class="from_error" id="message_error"></div>
+      </div>
+
+      <div class="contact_buttons">
+        <a class="button_clear" href="#">Clear</a>
+        <a class="button_submit" href="#">Submit</a>
+      </div>
+    </form>
+
   </main>
 
   <footer>
