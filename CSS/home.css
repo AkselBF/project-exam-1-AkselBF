@@ -5,6 +5,7 @@
 
 @import url(general.css);
 @import url(menu.css);
+@import url(footer.css);
 
 
 /*
@@ -258,50 +259,11 @@
   transition: 0.5s;
 }
 
+/*
 .scale {
   animation-name: slide;
   animation-duration: 0.5s;
 }
 
 @keyframes slide {}
-
-
-/* 
-  Footer 
 */
-
-footer {
-  background-color: #000000;
-  color: #ffffff;
-  justify-content: center;
-  text-align: center;
-  margin-top: 70px;
-  padding: 60px 0 80px 0;
-}
-
-.footer_logos {
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.fa-brands {
-  margin: 30px 10px 10px 10px;
-}
-
-/* Media querries for footer */
-@media (min-width: 1000px) {
-  footer {
-    display: flex;
-    flex-direction: row;
-    padding: 30px 50px 40px 50px;
-  }
-
-  .footer_logos {
-    margin-left: -45px;
-  }
-
-  .fa-brands {
-    margin: auto auto auto 30px;
-  }
-}

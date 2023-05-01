@@ -4,6 +4,7 @@
 
 @import url(general.css);
 @import url(menu.css);
+@import url(footer.css);
 
 
 /*
@@ -17,3 +18,30 @@
 /*
   Main
 */
+
+main {
+  justify-content: center;
+  text-align: center;
+}
+
+.contact_title {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+  margin: 40px auto 30px auto;
+}
+
+.big_text {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.small_text {
+  margin: 10px auto 40px auto;
+}
+
+
+/* Textboxes */
+.contact_textboxes {
+  justify-content: center;
+  text-align: center;
+}

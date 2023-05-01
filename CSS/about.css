@@ -4,6 +4,7 @@
 
 @import url(general.css);
 @import url(menu.css);
+@import url(footer.css);
 
 
 /*
@@ -18,6 +19,7 @@
   Main
 */
 
+/* top description */
 .about_intro {
   justify-content: center;
 }
@@ -30,50 +32,197 @@
 
 .about_intro {
   width: 70%;
-  margin: 10px auto 30px auto;
+  margin: 10px auto 40px auto;
 }
 
 .intro_text {
   margin: 15px auto 15px auto;
 }
 
+/* Media querries for title and top description */
+@media (min-width: 700px) {
+  .about_intro {
+    width: 40%;
+  }
+}
+
+
+/* Text and image */
+.about_goal {
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  margin-bottom: -5px;
+  padding: 5px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.goal_intro {
+  width: 80%;
+  margin: 30px auto 40px auto;
+}
+
+.goal_title {
+  text-align: left;
+  margin: 20px auto 5px auto;
+}
+
+/* title lines */
+.line_1 {
+  width: 80px;
+  margin-bottom: 5px;
+}
+
+.line_1::after {
+  content: " ";
+  display: block;
+  border-bottom: 4px solid #002A42;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.line_2 {
+  width: 50px;
+  margin-bottom: 40px;
+}
+
+.line_2::after {
+  content: " ";
+  display: block;
+  border-bottom: 3px solid #0074D9;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.goal_intro_text {
+  text-align: left;
+  margin: 15px auto 15px auto;
+}
+
+.goal_intro_image {
+  width: 100%;
+}
+
+/* Media querries for description and image */
+@media (min-width: 700px) {
+  .about_goal {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .goal_intro {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+
+  .goal_intro_title {
+    width: 80%;
+    margin: auto;
+  }
+
+  .goal_intro_text {
+    width: 80%;
+  }
+
+  .goal_image {
+    width: 50%;
+    margin: auto;
+  }
+
+  .goal_intro_image {
+    width: 100%;
+    margin:  30px auto 0 auto;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .goal_intro_image {
+    width: 80%;
+  }
+}
+
 
 /* 
-  Footer 
+  About us: subjects 
 */
 
-footer {
-  background-color: #000000;
+.about_subjects {
+  background-color: #141414;
   color: #ffffff;
   justify-content: center;
   text-align: center;
-  margin-top: 70px;
-  padding: 60px 0 80px 0;
+  padding: 50px 0 60px 0;
 }
 
-.footer_logos {
+.subjects_text {
+  width: 80%;
+  margin: auto;
+}
+
+.subjects_text_desc {
+  margin: 20px auto 40px auto;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* subjects */
+.subjects {
   justify-content: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.fa-brands {
-  margin: 30px 10px 10px 10px;
+.subject {
+  margin: 10px auto 30px auto;
+  text-decoration: none;
 }
 
-/* Media querries for footer */
-@media (min-width: 1000px) {
-  footer {
-    display: flex;
+.subject_image {
+  width: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.subject_title {
+  color: #002A42;
+  background-color: #ffffff;
+  width: 300px;
+  margin-top: -5px;
+  padding: 30px 0 30px 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* media querries for subjects */
+@media (min-width: 700px) {
+  .subjects {
     flex-direction: row;
-    padding: 30px 50px 40px 50px;
+    width: 85%;
+    overflow: auto;
+    white-space: nowrap;
+    margin: 10px auto 20px auto;
+    justify-content: left;
   }
 
-  .footer_logos {
-    margin-left: -45px;
+  .subject {
+    margin: 10px 20px 30px 20px;
   }
+}
 
-  .fa-brands {
-    margin: auto auto auto 30px;
+@media (min-width: 1217px) {
+  .subjects {
+    justify-content: center;
   }
+}
+
+
+/*
+  footer adjustements
+*/
+
+footer {
+  margin-top: -2px;
 }
