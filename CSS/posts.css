@@ -3,10 +3,6 @@
 */
 
 .blog_posts {
-  width: 85%;
-  height: 360px;
-  overflow: auto;
-  white-space: nowrap;
   margin: auto;
 }
 
