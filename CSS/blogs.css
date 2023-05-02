@@ -57,13 +57,13 @@
 
 
 /* Blog posts */
+
 .blog_posts {
   list-style-type: none;
   width: 85%;
   margin: 60px auto 50px auto;
-  display: flex;
 }
-
+/*
 .blog_posts:hover {
   height: 380px;
   transition: 0.5s ease-in-out;
@@ -72,17 +72,19 @@
 .blog_posts .blog {
   justify-content: center;
 }
-
+*/
 .blog {
   width: 300px;
   margin: 30px auto;
 }
-
+/*
 .blog:hover {
   transform: scale(1.05);
   transform-origin: top;
   transition: 0.5s ease-in-out;
 }
+*/
+
 
 .blog_image {
   width: 300px;
@@ -135,8 +137,8 @@
   padding-right: 15px;
 }
 
+/*
 
-/* Media querries for the carousel */
 @media (min-width: 700px) {
   .blog {
     margin: auto 10px 15px 10px;
@@ -148,6 +150,7 @@
     margin: auto 20px 15px 20px;
   }
 }
+*/
 
 
 /* Blog button */
