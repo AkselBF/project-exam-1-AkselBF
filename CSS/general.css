@@ -21,6 +21,10 @@ main {
   text-align: center;
 }
 
+a {
+  text-decoration: none
+}
+
 /*
   General font
 */

@@ -129,7 +129,7 @@
 
 
 /* Blog carousel */
-.home_blogs {
+.blog_posts {
   width: 85%;
   height: 360px;
   overflow: auto;
@@ -137,12 +137,12 @@
   margin: auto;
 }
 
-.home_blogs:hover {
+.blog_posts:hover {
   height: 380px;
   transition: 0.5s ease-in-out;
 }
 
-.home_blogs .blog {
+.blog_posts .blog {
   display: inline-block;
   justify-content: center;
 }

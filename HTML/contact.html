@@ -38,45 +38,39 @@
 
     <form>
       <div class="contact_textboxes">
-        <label>
+        <div class="name_and_mail">
           <input
-            name="fullname"
-            class="input_box"
-            id="input_name"
-            placeholder="Full name"
-          />
-        </label>
+          name="fullname"
+          class="input_box"
+          id="input_name"
+          placeholder="Full name"
+        />
         <div class="from_error" id="fullname_error"></div>
 
-        <label>
-          <input
-            name="email"
-            class="input_box"
-            id="input_mail"
-            placeholder="E-mail"
-          />
-        </label>
+        <input
+          name="email"
+          class="input_box"
+          id="input_mail"
+          placeholder="E-mail"
+        />
         <div class="from_error" id="email_error"></div>
+        </div>
 
-        <label>
-          <input
-            name="subject"
-            class="input_box"
-            id="input_subject"
-            placeholder="Subject"
-          />
-        </label>
+        <input
+          name="subject"
+          class="input_box"
+          id="input_subject"
+          placeholder="Subject"
+        />
         <div class="from_error" id="subject_error"></div>
 
-        <label>
-          <input
-            name="message"
-            class="input_box"
-            id="input_message"
-            placeholder="Message"
-          />
-        </label>
+        <textarea 
+          name="message" 
+          class="input_box" 
+          id="input_message" 
+          placeholder="Message..."></textarea>
         <div class="from_error" id="message_error"></div>
+
       </div>
 
       <div class="contact_buttons">
