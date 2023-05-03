@@ -21,8 +21,8 @@
 
 .subject_top {
   color: #ffffff;
-  background: linear-gradient(#015180, #001724);
-  padding-top: 40px;
+  background: linear-gradient(#015180, #010b12);
+  padding: 40px 0 20px 0;
 }
 
 .subject_title {
@@ -54,6 +54,7 @@
   padding: 20px 0 40px 0;
   margin: auto;
   text-align: left;
+  line-height: 1.8em;
 }
 
 .text_title {
@@ -77,10 +78,11 @@
 }
 
 /* Media querries for info */
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .info_text {
     width: 50%;
     margin-top: 20px;
+    line-height: 1.3em;
   }
 
   .info_image {
@@ -99,6 +101,13 @@
     width: 80%;
   }
 }
+
+@media (min-width: 1000px) {
+  .info_text {
+    line-height: 1.8em;
+  }
+}
+
 
 /*
 #info_1 {

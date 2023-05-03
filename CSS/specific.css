@@ -18,3 +18,62 @@
 /*
   Main
 */
+
+.specific_hero {
+  width: 100%;
+}
+
+.specific_title {
+  margin: 40px auto 30px auto;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+}
+
+main .specific_title {
+  width: 85%;
+}
+
+.specific_description {
+  text-align: left;
+  width: 85%;
+  margin: 20px auto 30px auto;
+}
+
+.description_text {
+  margin: 15px auto;
+  line-height: 1.4em;
+}
+
+.description_lists {
+  width: 85%;
+  margin: auto;
+  line-height: 1.3em;
+}
+
+.list_point {
+  margin: 10px auto;
+}
+
+.image {
+  margin: auto;
+  width: 85%;
+}
+
+/* Media querries for text and image */
+@media (min-width: 1000px) {
+  .specific_sections {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .specific_description {
+    width: 45%;
+    margin: 0 auto 30px auto;
+  }
+
+  .specific_image {
+    width: 40%;
+    margin: 20px auto 30px auto;
+  }
+}

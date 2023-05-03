@@ -158,6 +158,11 @@
   width: 300px;
   margin: 30px auto;
 }
+
+.blog a {
+  color: #ffffff;
+}
+
 /*
 .blog:hover {
   transform: scale(1.05);
