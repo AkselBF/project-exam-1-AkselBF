@@ -18,3 +18,94 @@
 /*
   Main
 */
+
+.subject_top {
+  color: #ffffff;
+  background: linear-gradient(#015180, #001724);
+  padding-top: 40px;
+}
+
+.subject_title {
+  margin: 40px auto 30px auto;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+}
+
+.subject_intro {
+  width: 70%;
+  margin: 50px auto 40px auto;
+  padding-bottom: 60px;
+}
+
+/* main */
+.subject_info {
+  color: #ffffff;
+  background-color: #141414;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info_text {
+  width: 85%;
+  padding: 20px 0 40px 0;
+  margin: auto;
+  text-align: left;
+}
+
+.text_title {
+  margin: 10px auto 20px auto;
+}
+
+.text_description {
+  margin: 10px auto 10px auto;
+}
+
+.info_image {
+  width: 100%;
+}
+
+#info_1 {
+  margin: -42px auto 0 auto;
+}
+
+#info_3 {
+  margin: 0 auto -72px auto;
+}
+
+/* Media querries for info */
+@media (min-width: 700px) {
+  .info_text {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .info_image {
+    width: 50%;
+  }
+  
+  .info {
+    flex-direction: row;
+  }
+
+  #info_2 {
+    flex-direction: row-reverse;
+  }
+
+  .text_title, .text_description {
+    width: 80%;
+  }
+}
+
+/*
+#info_1 {
+  margin: -42px auto 0 auto;
+}
+
+#info_3 {
+  margin: 0 auto -72px auto;
+}
+*/
