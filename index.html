@@ -65,51 +65,54 @@
       <ul class="blog_posts">
 
         <!-- Indiviual blogs -->
-        <li class="blog">
-          <img class="blog_image" src="Images/water.png"
-          alt="Image for blog">
-          <div class="blog_description">
-            <h3 class="blog_desc_text">Drinking water reduction</h3>
-            <div class="blog_line"></div>
-            <div class="blog_date_and_more">
-              <p class="blog_desc_date">25.04.2023</p>
-              <p class="blog_desc_more">Read more ></p>
-            </div>
-          </div>
-        </li>
-  
-        <li class="blog">
-          <img class="blog_image" src="Images/water.png"
-          alt="image for blog">
-          <div class="blog_description">
-            <h3 class="blog_desc_text">Drinking water reduction</h3>
-            <div class="blog_line"></div>
-            <div class="blog_date_and_more">
-              <p class="blog_desc_date">25.04.2023</p>
-              <p class="blog_desc_more">Read more ></p>
-            </div>
-          </div>
-        </li>
-  
-        <li class="blog">
-          <img class="blog_image" src="Images/water.png"
-          alt="image for blog">
-          <div class="blog_description">
-            <h3 class="blog_desc_text">Drinking water reduction</h3>
-            <div class="blog_line"></div>
-            <div class="blog_date_and_more">
-              <p class="blog_desc_date">25.04.2023</p>
-              <p class="blog_desc_more">Read more ></p>
-            </div>
-          </div>
-        </li> 
+        <div class="posts_1">
+          <li class="blog"><a href="HTML/specific.html">
+            <img class="blog_image" src="Images/water.png"
+            alt="Image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+    
+          <li class="blog"><a href="HTML/specific.html">
+            <img class="blog_image" src="Images/water.png"
+            alt="image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+    
+          <li class="blog"><a href="HTML/specific.html">
+            <img class="blog_image" src="Images/water.png"
+            alt="image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li> 
+        </div>
+
       </ul>
   
       <!--
         next & previous buttons and dots
       -->
       <div class="carousel">
-        <a class="carousel_buttons" id="prev" href="#">
+        <a class="carousel_buttons" id="prev" onclick="plusSlides(-1)">
           <i class="fa-solid fa-chevron-left fa-2xl"></i>
         </a>
   
@@ -119,7 +122,7 @@
           <span class="dot" id="dot_3"></span>
         </div>
   
-        <a class="carousel_buttons" id="next" href="#">
+        <a class="carousel_buttons" id="next" onclick="plusSlides(1)">
           <i class="fa-solid fa-chevron-left fa-rotate-180 fa-2xl"></i>
         </a>
       </div>

@@ -19,6 +19,27 @@
   Main
 */
 
+.top_container {
+  position: relative;
+}
+
+.back_button {
+  position: absolute;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  top: 100px;
+  left: 30px;
+  font-family: 'inter', sans-serif;
+  font-size: 1.2em;
+  border: 3px solid #88a6b4;
+  border-radius: 30px;
+}
+
+.back_button .fa-chevron-left {
+  margin-right: 10px;
+}
+
 .subject_top {
   color: #ffffff;
   background: linear-gradient(#015180, #010b12);
@@ -26,7 +47,7 @@
 }
 
 .subject_title {
-  margin: 40px auto 30px auto;
+  margin: 80px auto 30px auto;
   text-align: center;
   font-family: 'Comfortaa', cursive;
   font-weight: 600;
@@ -79,6 +100,10 @@
 
 /* Media querries for info */
 @media (min-width: 900px) {
+  .subject_title {
+    margin: 60px auto 30px auto;
+  }
+
   .info_text {
     width: 50%;
     margin-top: 20px;
