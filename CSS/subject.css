@@ -131,6 +131,11 @@
   .info_text {
     line-height: 1.8em;
   }
+
+  footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 
@@ -143,3 +148,12 @@
   margin: 0 auto -72px auto;
 }
 */
+
+.subject_footer_image {
+  width: 132px;
+  height: 105px;
+}
+
+footer .subject_title {
+  margin-top: 40px;
+}

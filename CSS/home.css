@@ -135,6 +135,8 @@
   overflow: auto;
   white-space: nowrap;
   margin: auto auto -20px auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .blog_posts .blog {
@@ -144,6 +146,7 @@
 
 
 /* Blog posts */
+
 .blog {
   width: 300px;
   margin: auto auto 15px auto;
@@ -248,16 +251,22 @@
   transition: background-color 0.5s ease;
 }
 
-#prev:hover, #next:hover {
+.carousel_dots .current_slide {
+  height: 15px;
+  width: 15px;
+  background-color: #002A42;
+}
+
+.carousel_prev:hover, .carousel_next:hover {
   transform: scale(1.2);
   transition: 0.5s ease;
 }
 
-#prev:hover {
+.carousel_prev:hover {
   transform-origin: center bottom;
 }
 
-#next:hover {
+.carousel_next:hover {
   transform-origin: center bottom;
 }
 
