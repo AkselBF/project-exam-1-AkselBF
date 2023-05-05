@@ -11,6 +11,7 @@
   <script src="https://kit.fontawesome.com/26fd6b155e.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../CSS/contact.css">
+  <script defer src="../Javascript/contact.js"></script>
 </head>
 
 <body>
@@ -36,40 +37,59 @@
     <p class="big_text">Send us an email</p>
     <p class="small_text">Get an answer within the week</p>
 
-    <form>
+    <div class="message"></div>
+
+    <form class="contact_form">
       <div class="contact_textboxes">
         <div class="name_and_mail">
-          <input
-          name="fullname"
-          class="input_box"
-          id="input_name"
-          placeholder="Full name"
-        />
-        <div class="from_error" id="fullname_error"></div>
 
-        <input
-          name="email"
-          class="input_box"
-          id="input_mail"
-          placeholder="E-mail"
-        />
-        <div class="from_error" id="email_error"></div>
+          <div class="input">
+            <input
+              name="fullname"
+              class="input_box"
+              id="input_name"
+              placeholder="Full name"
+            />
+            <div class="form_error" id="fullname_error">
+              Please enter your full name (Min. 5 characters)
+            </div>
+          </div>
+
+          <div class="input">
+            <input
+              name="email"
+              class="input_box"
+              id="input_mail"
+              placeholder="E-mail"
+            />
+            <div class="form_error" id="email_error">
+              Please enter valid email adress
+            </div>
+          </div>
         </div>
 
-        <input
-          name="subject"
-          class="input_box"
-          id="input_subject"
-          placeholder="Subject"
-        />
-        <div class="from_error" id="subject_error"></div>
+        <div class="input">
+          <input
+            name="subject"
+            class="input_box"
+            id="input_subject"
+            placeholder="Subject"
+          />
+          <div class="form_error" id="subject_error">
+            Please write subject (Min. 15 characters)
+          </div>
+        </div>
 
-        <textarea 
-          name="message" 
-          class="input_box" 
-          id="input_message" 
-          placeholder="Message..."></textarea>
-        <div class="from_error" id="message_error"></div>
+        <div class="input">
+          <textarea 
+            name="message" 
+            class="input_box" 
+            id="input_message" 
+            placeholder="Message..."></textarea>
+          <div class="form_error" id="message_error">
+            Please enter message (Min. 25 characters)
+          </div>
+        </div>
 
       </div>
 
