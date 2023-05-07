@@ -64,12 +64,23 @@
 
 /* Error messages */
 .form_error {
-  display: none;
+  /*display: none;*/
   font-family: 'inter', sans-serif;
   color: #ee0000;
   text-align: left;
   margin: -10px auto 15px auto;
 }
+
+/*
+.form_error.error input {
+  border-color: #ee0000;
+}*/
+
+/* Message success */
+/*
+.form_error.success input {
+  border-color: #09c372;
+}*/
 
 
 /* Media querries for contact text boxes */
@@ -106,10 +117,11 @@
   text-align: center;
 }
 
-.contact_buttons a {
+.button {
   font-family: 'inter', sans-serif;
   font-weight: bold;
   font-size: 1.2em;
+  border: 1px;
 }
 
 .button_clear {
