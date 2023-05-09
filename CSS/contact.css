@@ -18,20 +18,35 @@
 /*
   Main
 */
+main {
+  background: linear-gradient(to right, #042335, #015180);
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
 
 .contact_title {
-  margin: 40px auto 30px auto;
+  margin: 0 auto 30px auto;
   font-family: 'Comfortaa', cursive;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .big_text {
   font-size: 1.2em;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .small_text {
   margin: 10px auto 40px auto;
+  color: #ffffff;
+}
+
+.contact_form {
+  background-color: #fafafa;
+  width: 80%;
+  margin: auto;
+  padding: 30px 0 20px 0;
 }
 
 
@@ -42,8 +57,38 @@
 }
 
 .input {
-  width: 70%;
+  width: 90%;
   margin: auto;
+}
+
+.input.success input {
+  border-color: #09c372;
+}
+
+.input.success textarea {
+  border: solid 2px #09c372;
+}
+
+.input.error input {
+  border-color: #ff3860;
+}
+
+.input.error textarea {
+  border: solid 2px #ff3860;
+}
+
+.input .form_error {
+  color: #ff3860;
+  font-size: 1em;
+  height: 13px;
+  text-align: left;
+  margin: -10px 0 10px 0;
+}
+
+/* Upon success */
+.success {
+  color: #09c372;
+  margin-bottom: 20px;
 }
 
 .input_box {
@@ -71,50 +116,30 @@
   margin: -10px auto 15px auto;
 }
 
-/*
-.form_error.error input {
-  border-color: #ee0000;
-}*/
-
-/* Message success */
-/*
-.form_error.success input {
-  border-color: #09c372;
-}*/
-
-
 /* Media querries for contact text boxes */
 @media (min-width: 700px) {
+  .input_box {
+    width: 90%;
+  }
+
   #input_message {
     height: 200px;
   }
-}
 
-@media (min-width: 1000px) {
-  #input_name {
-    width: 90%;
-    margin-right: 50px;
-  }
-
-  #input_mail {
-    width: 100%;
-  }
-
-  .name_and_mail {
-    margin: auto;
-    display: flex;
-    width: 70%;
+  .input .form_error {
+    margin: -10px 0 10px 5%;
   }
 }
 
 
 /* contact buttons */
 .contact_buttons {
-  width: 70%;
-  margin: auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
+  margin: 30px auto 30px auto;
 }
 
 .button {
@@ -122,10 +147,10 @@
   font-weight: bold;
   font-size: 1.2em;
   border: 1px;
+  margin: 10px auto;
 }
 
-.button_clear {
-  margin: 30px auto 10px auto;
+#button_clear {
   padding: 12px 80px 12px 80px;
   color: #ffffff;
   background-color: #0074D9;
@@ -134,8 +159,7 @@
   text-decoration: none;
 }
 
-.button_submit {
-  margin: 10px auto 30px auto;
+#button_submit {
   padding: 12px 72px 12px 72px;
   color: #ffffff;
   background-color: #002A42;
@@ -147,17 +171,39 @@
 
 /* Media querries for contact buttons */
 @media (min-width: 700px) {
+  .contact_form {
+    width: 60%;
+  }
+
   .contact_buttons {
-    display: flex;
+    justify-content: right;
+    margin: 30px auto 30px auto;
+  }
+
+  .button {
+    margin: 10px auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact_form {
+    width: 50%;
+  }
+
+  .contact_buttons {
     flex-direction: row;
     justify-content: right;
   }
 
-  .button_clear {
-    margin: 30px 20px 30px 0;
+  .button {
+    margin: 10px 0 10px 40px;
   }
+}
 
-  .button_submit {
-    margin: 30px 0 30px 20px;
-  }
+footer {
+  margin-top: 0;
+}
+
+footer .contact_title {
+  margin-top: 40px;
 }

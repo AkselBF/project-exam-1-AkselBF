@@ -40,36 +40,31 @@
     <div class="message"></div>
 
     <form class="contact_form">
+      <h2 class="success"></h2>
       <div class="contact_textboxes">
-        <div class="name_and_mail">
 
-          <div class="input">
-            <input
-              name="fullname"
-              type="text"
-              class="input_box"
-              id="input_name"
-              placeholder="Full name"
-            />
-            <div class="form_error" id="fullname_error">
-              <!--Please enter your full name (Min. 5 characters)-->
-            </div>
-          </div>
-
-          <div class="input">
-            <input
-              name="email"
-              type="text"
-              class="input_box"
-              id="input_mail"
-              placeholder="E-mail"
-            />
-            <div class="form_error" id="email_error">
-              <!--Please enter valid email adress-->
-            </div>
-          </div>
+        <div class="input">
+          <input
+            name="fullname"
+            type="text"
+            class="input_box"
+            id="input_name"
+            placeholder="Full name"
+          />
+          <div class="form_error" id="fullname_error"></div>
         </div>
 
+        <div class="input">
+          <input
+            name="email"
+            type="text"
+            class="input_box"
+            id="input_mail"
+            placeholder="E-mail"
+          />
+          <div class="form_error" id="email_error"></div>
+        </div>
+        
         <div class="input">
           <input
             name="subject"
@@ -78,9 +73,7 @@
             id="input_subject"
             placeholder="Subject"
           />
-          <div class="form_error" id="subject_error">
-            <!--Please write subject (Min. 15 characters)-->
-          </div>
+          <div class="form_error" id="subject_error"></div>
         </div>
 
         <div class="input">
@@ -90,16 +83,14 @@
             class="input_box" 
             id="input_message" 
             placeholder="Message..."></textarea>
-          <div class="form_error" id="message_error">
-            <!--Please enter message (Min. 25 characters)-->
-          </div>
+          <div class="form_error" id="message_error"></div>
         </div>
 
       </div>
 
       <div class="contact_buttons">
-        <button class="button button_clear" type="reset" href="#">Clear</button>
-        <button class=" button button_submit" type="submit" href="#">Submit</button>
+        <button class="button" id="button_clear" type="reset">Clear</button>
+        <button class="button" id="button_submit" type="submit">Submit</button>
       </div>
     </form>
 
@@ -116,3 +107,34 @@
   </footer>
 </body>
 </html>
+
+<!--
+<div class="container">
+  <form class="form" action="/">
+      <h1>Registration</h1>
+      <h2 class="success"></h2>
+      <div class="input-control">
+          <input class="input" id="fullname" name="fullname" type="text">
+          <div class="error"></div>
+      </div>
+      <div class="input-control">
+          <input class="input" id="email" name="email" type="text">
+          <div class="error"></div>
+      </div>
+      <div class="input-control">
+          <input class="input" id="subject"name="subject" type="text">
+          <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <input class="input" id="message"name="message" type="text">
+        <div class="error"></div>
+      </div>
+
+      <div class="buttons">
+        <button class="button" id="clear_button" type="reset">Clear</button>
+        <button class="button" id="submit_button" type="submit">Sign Up</button>
+      </div>
+
+  </form>
+</div>
+-->
