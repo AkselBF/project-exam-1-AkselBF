@@ -44,9 +44,44 @@
       <div class="blog_filter">
         <div class="blog_filter_mobile">
           <p class="filter_intro">Search & sort</p>
-          <i class="fa-solid fa-chevron-left fa-rotate-270 fa-2xl"></i>
+          <i class="fa-solid fa-chevron-left fa-rotate-270 fa-xl"></i>
         </div>
-        <div class="blog_filter_desktop"></div>
+
+        <ul class="blog_filter_desktop">
+          <input class="search_bar" type="text" placeholder="Search..." onkeyup="filterNames()">
+          <div class="filter_line"></div>
+
+          <li class="desktop_item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <span class="item_text">Newest</span>
+          </li>
+          <li class="desktop_item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <span class="item_text">Oldest</span>
+          </li>
+          <li class="desktop_item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <span class="item_text">Science</span>
+          </li>
+          <li class="desktop_item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <span class="item_text">Discovery</span>
+          </li>
+          <li class="desktop_item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <span class="item_text">Media</span>
+          </li>
+        </ul>
       </div>
 
       <ul class="blog_posts">
@@ -102,14 +137,72 @@
             </div>
           </div></a>
         </li>
+
+        <ul class="hidden_posts">
+          <!-- Indiviual blogs -->
+          <li class="blog"><a href="../HTML/specific.html">
+            <img class="blog_image" src="../Images/water.png"
+            alt="Image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+    
+          <li class="blog"><a href="../HTML/specific.html">
+            <img class="blog_image" src="../Images/water.png"
+            alt="image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+    
+          <li class="blog"><a href="../HTML/specific.html">
+            <img class="blog_image" src="../Images/water.png"
+            alt="image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+  
+          <li class="blog"><a href="../HTML/specific.html">
+            <img class="blog_image" src="../Images/water.png"
+            alt="image for blog">
+            <div class="blog_description">
+              <h3 class="blog_desc_text">Drinking water reduction</h3>
+              <div class="blog_line"></div>
+              <div class="blog_date_and_more">
+                <p class="blog_desc_date">25.04.2023</p>
+                <p class="blog_desc_more">Read more ></p>
+              </div>
+            </div></a>
+          </li>
+        </ul>
+
       </ul>
 
     </div>
 
-    <div class="blog_button">
+    <!--<span class="blog_dots">...</span>-->
+
+    <div class="blog_button" onclick="showMore()">
       <h3 class="button_text">See more</h3>
       <div class="button_line"></div>
-      <i class="fa-solid fa-chevron-left fa-rotate-270 fa-2xl"></i>
+      <i class="fa-solid fa-chevron-left fa-rotate-270 fa-2xl" id="arrow"></i>
     </div>
   </main>
 
