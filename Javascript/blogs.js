@@ -1,24 +1,25 @@
 
 /*
+  Filter
+*/
+
+const filterButton = document.querySelector(".blog_filter_mobile");
+const items = document.querySelectorAll(".desktop_item");
+
+filterButton.addEventListener("click", () => {
+  filterButton.classList.toggle("open");
+});
+
+items.forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("checked");
+  });
+});
+
+
+/*
   See more button
 */
-/*
-function showMore() {
-  let morePosts = document.querySelector(".hidden_posts");
-  let moreButton = document.querySelector(".blog_button");
-  let buttonText = document.querySelector(".button_text");
-  let dots = document.querySelector(".blog_dots");
-
-  if (dots.style.display === "hidden") {
-    dots.style.display = "block";
-    buttonText.innerHTML = "See more";
-    morePosts.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    buttonText.style.display = "See less";
-    morePosts.style.display = "block";
-  }
-}*/
 
 function showMore() {
   let morePosts = document.querySelector(".hidden_posts");
