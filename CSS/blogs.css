@@ -134,6 +134,7 @@
   width: 80%;
   height: 30px;
   margin: 20px auto 10px auto;
+  padding: 0 5px;
   border: 1px solid #c8c8c8;
   border-radius: 5px;
 }
@@ -195,6 +196,13 @@
   font-family: 'inter', sans-serif;
 }
 
+/* Media querries for filter */
+@media (min-width: 1000px) {
+  .blog_filter_desktop {
+    margin: 20px auto -120px auto;
+  }
+}
+
 
 /* 
   Blog posts 
@@ -215,6 +223,17 @@
 @media (min-width: 300px) {
   .hidden_posts {
     display: none;
+  }
+}
+
+@media (max-width: 799px) {
+  .hidden_posts {
+    flex-direction: column;
+  }
+
+  .hidden_posts > * {
+    /*flex: 0 1 300px;*/
+    margin: auto;
   }
 }
 

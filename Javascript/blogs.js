@@ -13,6 +13,17 @@ filterButton.addEventListener("click", () => {
 items.forEach(item => {
   item.addEventListener("click", () => {
     item.classList.toggle("checked");
+
+    // Later (Not necessary)
+    let checked = document.querySelectorAll(".checked");
+    let checkText = document.querySelector(".filter_intro");
+    console.log(checked, checkText)
+    /*
+    if (checked && checked.length > 0) {
+      checkText.innerHTML = `${checked} Selected`;
+    } else {
+      checkText.innerText = `Search & sort`;
+    }*/
   });
 });
 

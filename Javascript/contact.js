@@ -4,14 +4,15 @@
 */
 
 const form = document.querySelector('.contact_form');
+
 //const input = document.querySelector('.input');
-const fullname = document.getElementById('input_name');
-const email = document.getElementById('input_mail');
-const subject = document.getElementById('input_subject');
-const message = document.getElementById('input_message');
+const fullname = document.querySelector("#input_name");
+const email = document.querySelector('#input_mail');
+const subject = document.querySelector('#input_subject');
+const message = document.querySelector('#input_message');
 //const buttons = document.querySelector('.buttons');
 const success = document.querySelector('.success');
-const nextPage = document.getElementById('button_submit');
+const nextPage = document.querySelector('#button_submit');
 
 
 form.addEventListener('submit', e => {
