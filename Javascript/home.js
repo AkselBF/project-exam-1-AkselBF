@@ -59,9 +59,45 @@ nextButton.addEventListener('click', e => {
 const widthProgress = document.querySelector(".blog_posts");
 //const scrollIndicator = document.querySelector(".carousel_bar")
 const progressBar = document.querySelector("#scroll_indicator");
+const previous = document.querySelector(".carousel_prev");
+const next = document.querySelector(".carousel_next");
+
+widthProgress.addEventListener("scroll", function() {
+  const scrollWidth = widthProgress.scrollWidth;
+  const clientWidth = widthProgress.clientWidth;
+  const scrollPos = widthProgress.scrollLeft;
+  const scrollPercent = (scrollPos / (scrollWidth - clientWidth)) * 100;
+  progressBar.style.width = `${scrollPercent}%`;
+
+  if (scrollPercent === 0) {
+    previous.classList.add("hidden");
+  } else {
+    previous.classList.remove("hidden");
+  }
+
+  if (scrollPercent === 100) {
+    next.classList.add("hidden");
+  } else {
+    next.classList.remove("hidden");
+  }
+});
+
+previous.addEventListener("click", function() {
+  widthProgress.scrollBy({
+    left: -345,
+    behavior: "smooth"
+  });
+});
+
+next.addEventListener("click", function() {
+  widthProgress.scrollBy({
+    left: 345,
+    behavior: "smooth"
+  });
+});
 
 
-
+/*
 function carouselScroll() {
   let winscroll = widthProgress.scrollLeft || document.documentElement.scrollLeft;
   let width = document.documentElement.scrollWidth - document.documentElement.clientWidth;
@@ -69,7 +105,7 @@ function carouselScroll() {
 
   console.log(width);
   progressBar.style.width = scrolled + "%";
-}
+}*/
 
 /*
 window.onscroll = function() {myFunction()};

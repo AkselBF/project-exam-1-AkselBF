@@ -296,6 +296,10 @@
   padding: 0 4px;
 }
 
+.hidden {
+  display: none;
+}
+
 
 /*
 .dot:hover {
