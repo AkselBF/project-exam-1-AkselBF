@@ -138,6 +138,10 @@
   display: flex;
   flex-direction: row;
 }
+/*
+.blog_posts ::-webkit-scrollbar {
+  display: none;
+}*/
 
 .posts {
   margin: auto 2px;
