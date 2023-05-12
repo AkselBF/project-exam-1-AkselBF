@@ -42,13 +42,18 @@
 
 .specific_hero {
   width: 100%;
+  height: 472px;
+  object-fit: cover;
+  object-position: 0 20%;
 }
 
 .specific_title {
   margin: 40px auto 30px auto;
   text-align: center;
+  text-decoration: underline;
   font-family: 'Comfortaa', cursive;
   font-weight: 600;
+  color: #002A42;
 }
 
 main .specific_title {

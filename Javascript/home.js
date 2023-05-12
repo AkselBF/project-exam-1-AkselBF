@@ -84,14 +84,14 @@ widthProgress.addEventListener("scroll", function() {
 
 previous.addEventListener("click", function() {
   widthProgress.scrollBy({
-    left: -345,
+    left: -304,
     behavior: "smooth"
   });
 });
 
 next.addEventListener("click", function() {
   widthProgress.scrollBy({
-    left: 345,
+    left: 304,
     behavior: "smooth"
   });
 });
