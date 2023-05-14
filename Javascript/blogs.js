@@ -1,5 +1,26 @@
 
 /*
+  Fetch api data
+*/
+
+async function getData() {
+  try {
+    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
+    const data = await url.json();
+
+    console.log(data);
+    //data.forEach((water) => renderData(water));
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getData();
+
+//function renderData(water) {} 
+
+/*
   Filter
 */
 
