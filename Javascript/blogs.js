@@ -9,7 +9,7 @@ async function getData() {
     const data = await url.json();
 
     console.log(data);
-    //data.forEach((water) => renderData(water));
+    data.forEach((water) => renderData(water));
 
   } catch (error) {
     console.log(error);
@@ -18,7 +18,23 @@ async function getData() {
 
 getData();
 
-//function renderData(water) {} 
+function renderData(water) {
+  /*
+  document.querySelector(".blog_posts").innerHTML = `
+    <li class="blog"><a href="../HTML/specific.html?id=${water.id}">
+      <img class="blog_image" src="${water.acf[2]}"
+      alt="Image for blog">
+      <div class="blog_description">
+        <h3 class="blog_desc_text">${water.acf[0]}</h3>
+        <div class="blog_line"></div>
+        <div class="blog_date_and_more">
+          <p class="blog_desc_date">${water.acf[1]}</p>
+          <p class="blog_desc_more">Read more ></p>
+        </div>
+      </div></a>
+    </li>
+  `;*/
+} 
 
 /*
   Filter
