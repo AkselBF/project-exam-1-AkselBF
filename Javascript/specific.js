@@ -5,8 +5,7 @@
 
 const heroContainer = document.querySelector(".specific_hero");
 const titleContainer = document.querySelector(".specific_title");
-const textContainer = document.querySelector(".specific_description");
-const imageContainer = document.querySelector(".specific_image");
+const textContainer = document.querySelector(".specific_sections");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -24,7 +23,8 @@ async function fetchPost() {
     const water = await response.json();
     console.log(water);
 
-    createHTML(water);
+    createImage(water);
+    createTitle(water);
     createDetails(water);
 
   } catch (error) {
@@ -33,3 +33,15 @@ async function fetchPost() {
 }
 
 fetchPost();
+
+function createImage(water) {
+  heroContainer.innerHTML = ``;
+}
+
+function createTitle(water) {
+  titleContainer.innerHTML = ``;
+}
+
+function createDetails(water) {
+  textContainer.innerHTML = ``;
+}
