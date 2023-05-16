@@ -27,11 +27,13 @@
   margin: 40px auto 30px auto;
 }
 
+
 /* Setting up the container */
 .home_intro {
   display: flex;
   flex-direction: column;
 }
+
 
 /* Top intro */
 .intro_description {
@@ -56,10 +58,12 @@
   font-family: 'Comfortaa', cursive;
 }
 
+
 /* Top image */
 .intro_image {
   width: 100%;
 }
+
 
 /* Media querries for top description and image */
 @media (min-width: 700px) {
@@ -96,14 +100,19 @@
 */
 
 /* Blog section title */
+.home_posts {
+  width: 90%;
+  margin: auto;
+}
+
 .home_latest {
   text-align: left;
-  margin: 60px auto 3px 35px;
+  margin: 60px auto 3px auto;
 }
 
 .line_1 {
   width: 80px;
-  margin: 0 0 5px 35px;
+  margin-bottom: 5px;
 }
 
 .line_1::after {
@@ -116,7 +125,7 @@
 
 .line_2 {
   width: 50px;
-  margin: 0 0 40px 35px;
+  margin-bottom: 40px;
 }
 
 .line_2::after {
@@ -149,7 +158,9 @@
 }
 
 
-/* Blog posts */
+/* 
+  Blog posts 
+*/
 
 .blog {
   width: 300px;
@@ -253,6 +264,14 @@
   margin: auto 30px auto 30px;
 }
 
+.carousel_prev {
+  display: none;
+}
+/*
+.carousel_next {
+  display: block;
+}*/
+
 /* Buttons hover effects */
 .carousel_prev:hover, .carousel_next:hover {
   transform: scale(1.2);
@@ -267,24 +286,6 @@
   transform-origin: center bottom;
 }
 
-/* Carousel dots */
-/*
-.dot {
-  height: 10px;
-  width: 10px;
-  margin: 55px 10px 20px 10px;
-  background-color: #AAC7DF;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.5s ease;
-}
-
-.carousel_dots .current_slide {
-  height: 15px;
-  width: 15px;
-  background-color: #002A42;
-}
-*/
 
 /* The progress container (grey background) */
 .carousel_bar {
@@ -294,6 +295,7 @@
   margin: 55px 10px 20px 10px;
   border-radius: 30px;
 }
+
 
 /* The progress bar (scroll indicator) */
 .bar {
@@ -307,20 +309,3 @@
 .hidden {
   display: none;
 }
-
-
-/*
-.dot:hover {
-  background-color: #002A42;
-  transform: scale(1.5);
-  transition: 0.5s;
-}
-*/
-/*
-.scale {
-  animation-name: slide;
-  animation-duration: 0.5s;
-}
-
-@keyframes slide {}
-*/

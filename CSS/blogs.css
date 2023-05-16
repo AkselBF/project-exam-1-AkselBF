@@ -368,7 +368,6 @@
 }
 
 /*
-
 @media (min-width: 700px) {
   .blog {
     margin: auto 10px 15px 10px;
@@ -378,6 +377,12 @@
 @media (min-width: 1000px) {
   .blog {
     margin: auto 20px 15px 20px;
+  }
+}
+
+@media (min-width: 1286px) {
+  .blog {
+    margin: auto 30px 40px 30px;
   }
 }
 */

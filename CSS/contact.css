@@ -150,8 +150,8 @@ main {
   margin: 10px auto;
 }
 
-#button_clear {
-  padding: 12px 80px 12px 80px;
+#button_submit {
+  padding: 12px 72px 12px 72px;
   color: #ffffff;
   background-color: #0074D9;
   border-radius: 30px;
@@ -159,8 +159,8 @@ main {
   text-decoration: none;
 }
 
-#button_submit {
-  padding: 12px 72px 12px 72px;
+#button_clear {
+  padding: 12px 80px 12px 80px;
   color: #ffffff;
   background-color: #002A42;
   border-radius: 30px;
@@ -191,7 +191,7 @@ main {
   }
 
   .contact_buttons {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: right;
   }
 

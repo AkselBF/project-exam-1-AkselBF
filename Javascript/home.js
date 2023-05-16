@@ -14,17 +14,18 @@ widthProgress.addEventListener("scroll", function() {
   const scrollPos = widthProgress.scrollLeft;
   const scrollPercent = (scrollPos / (scrollWidth - clientWidth)) * 100;
   progressBar.style.width = `${scrollPercent}%`;
+  //console.log(scrollPercent);
 
   if (scrollPercent === 0) {
-    previous.classList.add("hidden");
+    previous.style.display = "none";
   } else {
-    previous.classList.remove("hidden");
+    previous.style.display = "block";
   }
 
-  if (scrollPercent === 100) {
-    next.classList.add("hidden");
+  if (scrollPercent >= 99) {
+    next.style.display = "none";
   } else {
-    next.classList.remove("hidden");
+    next.style.display = "block";
   }
 });
 
