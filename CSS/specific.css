@@ -98,7 +98,7 @@ main .specific_title {
   }
 
   .specific_description {
-    width: 45%;
+    width: 40%;
     margin: 0 auto 30px auto;
   }
 
@@ -106,4 +106,10 @@ main .specific_title {
     width: 40%;
     margin: 20px auto 30px auto;
   }
+}
+
+
+footer .specific_title {
+  color: #ffffff;
+  text-decoration: none;
 }

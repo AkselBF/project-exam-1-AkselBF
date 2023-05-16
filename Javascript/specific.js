@@ -3,9 +3,9 @@
   Get api data from blogs.js
 */
 
-const heroContainer = document.querySelector(".specific_hero");
+const heroContainer = document.querySelector(".hero");
 const titleContainer = document.querySelector(".specific_title");
-const textContainer = document.querySelector(".specific_sections");
+const detailContainer = document.querySelector(".specific_sections");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -35,13 +35,25 @@ async function fetchPost() {
 fetchPost();
 
 function createImage(water) {
-  heroContainer.innerHTML = ``;
+  heroContainer.innerHTML = `
+    <img class="specific_hero" src="${water.acf.image2}">
+  `;
 }
 
 function createTitle(water) {
-  titleContainer.innerHTML = ``;
+  titleContainer.innerHTML = `
+    ${water.acf.blog_post}
+  `;
 }
 
 function createDetails(water) {
-  textContainer.innerHTML = ``;
+  detailContainer.innerHTML = `
+    <div class="specific_description">
+      <p class="description_text">${water.content.rendered}</p>
+    </div>
+
+    <div class="specific_image">
+      <img class="image" src="${water.acf.image3}">
+    </div>
+  `;
 }
