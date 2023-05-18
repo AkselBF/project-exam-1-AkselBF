@@ -208,9 +208,15 @@
   Blog posts 
 */
 
+.post_align {
+  display: flex;
+  flex-direction: column;
+}
+
 .blog_posts {
+  float: left;
   list-style-type: none;
-  width: 85%;
+  width: 100%;
   margin: 30px auto;
 }
 
@@ -219,18 +225,22 @@
   width: 100%;
 }
 
-.hidden_posts .blog {
-  margin: 30px auto 0 auto;
-}
-
 /* Media querries for the two main sections */
 @media (min-width: 300px) {
+  .post_align {
+    margin: auto;
+  }
+
   .hidden_posts {
     display: none;
   }
 }
 
 @media (max-width: 799px) {
+  .post_align {
+    margin: auto;
+  }
+
   .hidden_posts {
     flex-direction: column;
   }
@@ -242,6 +252,11 @@
 }
 
 @media (min-width: 800px) {
+  .post_align {
+    margin: auto;
+    width: 85%;
+  }
+
   .blog_posts {
     display: flex;
     flex-wrap: wrap;
@@ -249,10 +264,6 @@
 
   .hidden_posts {
     flex-wrap: wrap;
-  }
-
-  .hidden_posts .blog {
-    margin: 30px auto;
   }
 
   .blog_posts > * {
@@ -266,6 +277,11 @@
 }
 
 @media (min-width: 1000px) {
+  .post_align {
+    width: 54%;
+    margin: auto 0;
+  }
+
   .blog_sections {
     flex-direction: row;
   }
@@ -280,18 +296,17 @@
   }
 
   .blog_posts {
-    margin: 40px 20px 60px 20px;
-    width: 62%;
+    margin: 30px 20px 60px 20px;
+  }
+
+  .hidden_posts {
+    margin: -60px 20px 60px 20px;
   }
 }
 
 @media (min-width: 1200px) {
   .blog_filter {
     width: 35%;
-  }
-
-  .blog_posts {
-    width: 54%;
   }
 }
 
