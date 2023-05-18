@@ -219,6 +219,10 @@
   width: 100%;
 }
 
+.hidden_posts .blog {
+  margin: 30px auto 0 auto;
+}
+
 /* Media querries for the two main sections */
 @media (min-width: 300px) {
   .hidden_posts {
@@ -245,6 +249,10 @@
 
   .hidden_posts {
     flex-wrap: wrap;
+  }
+
+  .hidden_posts .blog {
+    margin: 30px auto;
   }
 
   .blog_posts > * {
