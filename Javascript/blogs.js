@@ -96,9 +96,11 @@ function showMore() {
     morePosts.style.display = "none";
     buttonText.innerHTML = "See more";
     buttonIcon.style.transform = "rotate(270deg)";
+    buttonIcon.style.transition = "0.5s";
   } else {
     morePosts.style.display = "flex";
     buttonText.innerHTML = "See less";
     buttonIcon.style.transform = "rotate(90deg)";
+    buttonIcon.style.transition = "0.5s";
   }
 }
