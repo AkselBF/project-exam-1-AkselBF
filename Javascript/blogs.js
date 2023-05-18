@@ -58,6 +58,29 @@ function renderData(water) {
   Filter
 */
 
+// Search bar
+/*
+async function getSearch() {
+  const response = await fetch(url + "?search=" + searchValue);
+  const result = await response.json();
+  console.log(result);
+
+  result.results.forEach((water) => renderData(water));
+}
+
+const input = document.querySelector(".search_bar");
+
+input.addEventListener("keypress", () => {
+  searchValue = input.value;
+  console.log(searchValue);
+  document.querySelector(".blog_posts").innerHTML = "";
+  document.querySelector(".hidden_posts").innerHTML = "";
+  getSearch();
+})
+*/
+
+// Checkboxes
+
 const filterButton = document.querySelector(".blog_filter_mobile");
 const items = document.querySelectorAll(".desktop_item");
 
