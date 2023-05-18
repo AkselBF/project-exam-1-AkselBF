@@ -21,33 +21,6 @@
   border-radius: 10px;
 }
 
-/*Back logo*/
-.fa-arrow-left-long {
-  display: inline-block;
-  color: #ffffff;
-  margin: 7px 0 7px 15px;
-  padding: 5px 10px 5px 10px;
-}
-
-/*Keyframes and hover effect for back button*/
-@keyframes return {
-  0% {
-    margin-left: 15px;
-  }
-
-  50% {
-    margin-left: 5px;
-  }
-
-  100% {
-    margin-left: 15px;
-  }
-}
-
-.fa-arrow-left-long:hover {
-  animation: return 1s infinite;
-}
-
 .navigation {
   height: 40%;
   width: 320px;

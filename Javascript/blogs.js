@@ -79,6 +79,8 @@ items.forEach(item => {
     } else {
       checkText.innerText = `Search & sort`;
     }*/
+
+    //if (document.querySelector("#check_newest") = checked) {}
   });
 });
 
