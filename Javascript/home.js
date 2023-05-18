@@ -31,14 +31,14 @@ widthProgress.addEventListener("scroll", function() {
 
 previous.addEventListener("click", function() {
   widthProgress.scrollBy({
-    left: -304,
+    left: -340,
     behavior: "smooth"
   });
 });
 
 next.addEventListener("click", function() {
   widthProgress.scrollBy({
-    left: 304,
+    left: 340,
     behavior: "smooth"
   });
 });
@@ -47,7 +47,7 @@ next.addEventListener("click", function() {
 /*
   Fetch api data for carousel
 */
-/*
+
 async function getData() {
   try {
     const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
@@ -64,9 +64,8 @@ async function getData() {
 getData();
 
 function renderData(water) {
-  if (`${water.acf.type}` === "Default") {}
-
-  document.querySelector(".blog_posts").innerHTML += `
+  if (`${water.acf.type}` === "Default") {
+    document.querySelector(".blog_posts").innerHTML += `
     <li class="blog"><a href="HTML/specific.html?id=${water.id}">
       <img class="blog_image" src="${water.acf.image}"
       alt="Image for blog">
@@ -80,7 +79,7 @@ function renderData(water) {
       </div></a>
     </li>
   `;
+  }
 
-  if (`${water.acf.type}` === "Hidden") {}
+  // if (`${water.acf.type}` === "Hidden") {}
 }
-*/

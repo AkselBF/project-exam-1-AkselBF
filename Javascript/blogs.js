@@ -19,7 +19,8 @@ async function getData() {
 getData();
 
 function renderData(water) {
-  document.querySelector(".blog_posts").innerHTML += `
+  if (`${water.acf.type}` === "Default") {
+    document.querySelector(".blog_posts").innerHTML += `
     <li class="blog"><a href="../HTML/specific.html?id=${water.id}">
       <img class="blog_image" src="${water.acf.image}"
       alt="Image for blog">
@@ -33,6 +34,24 @@ function renderData(water) {
       </div></a>
     </li>
   `;
+  }
+
+  if (`${water.acf.type}` === "Hidden") {
+    document.querySelector(".hidden_posts").innerHTML += `
+    <li class="blog"><a href="../HTML/specific.html?id=${water.id}">
+      <img class="blog_image" src="${water.acf.image}"
+      alt="Image for blog">
+      <div class="blog_description">
+        <h3 class="blog_desc_text">${water.acf.blog_post}</h3>
+        <div class="blog_line"></div>
+        <div class="blog_date_and_more">
+          <p class="blog_desc_date">${water.acf.date}</p>
+          <p class="blog_desc_more">Read more ></p>
+        </div>
+      </div></a>
+    </li>
+  `;
+  }
 } 
 
 /*
@@ -71,7 +90,7 @@ items.forEach(item => {
 function showMore() {
   let morePosts = document.querySelector(".hidden_posts");
   let buttonText = document.querySelector(".button_text");
-  let buttonIcon = document.getElementById("arrow");
+  let buttonIcon = document.querySelector("#arrow");
 
   if (morePosts.style.display === "flex") {
     morePosts.style.display = "none";
