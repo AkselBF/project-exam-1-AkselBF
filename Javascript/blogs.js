@@ -80,7 +80,6 @@ input.addEventListener("keypress", () => {
 */
 
 // Checkboxes
-
 const filterButton = document.querySelector(".blog_filter_mobile");
 const items = document.querySelectorAll(".desktop_item");
 
