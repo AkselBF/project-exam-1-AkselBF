@@ -65,6 +65,11 @@
   background-color: #141414;
 }
 
+#climate_info {
+  color: #000000;
+  background-color: #fafafa;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -137,17 +142,6 @@
     padding-bottom: 30px;
   }
 }
-
-
-/*
-#info_1 {
-  margin: -42px auto 0 auto;
-}
-
-#info_3 {
-  margin: 0 auto -72px auto;
-}
-*/
 
 .subject_footer_image {
   width: 132px;
