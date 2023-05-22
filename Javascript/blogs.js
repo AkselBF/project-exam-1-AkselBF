@@ -59,25 +59,32 @@ function renderData(water) {
 */
 
 // Search bar
+
+
 /*
-async function getSearch() {
-  const response = await fetch(url + "?search=" + searchValue);
-  const result = await response.json();
-  console.log(result);
+const searchInput = document.querySelector(".search_bar");
+let users = [];
 
-  result.results.forEach((water) => renderData(water));
-}
-
-const input = document.querySelector(".search_bar");
-
-input.addEventListener("keypress", () => {
-  searchValue = input.value;
-  console.log(searchValue);
-  document.querySelector(".blog_posts").innerHTML = "";
-  document.querySelector(".hidden_posts").innerHTML = "";
-  getSearch();
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  users.forEach(user => {
+    const isVisible = `${water.title.rendered}`.includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  })
 })
-*/
+
+async function getSearch() {
+  try {
+    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
+    const data = await url.json();
+
+    console.log(data);
+    data.forEach((water) => renderData(water));
+
+  } catch (error) {
+    console.log(error);
+  }
+}*/
 
 // Checkboxes
 const filterButton = document.querySelector(".blog_filter_mobile");
@@ -94,15 +101,7 @@ items.forEach(item => {
     // Later (Not necessary)
     let checked = document.querySelectorAll(".checked");
     let checkText = document.querySelector(".filter_intro");
-    console.log(checked, checkText)
-    /*
-    if (checked && checked.length > 0) {
-      checkText.innerHTML = `${checked} Selected`;
-    } else {
-      checkText.innerText = `Search & sort`;
-    }*/
-
-    //if (document.querySelector("#check_newest") = checked) {}
+    console.log(checked, checkText);
   });
 });
 

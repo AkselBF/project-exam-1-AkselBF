@@ -19,6 +19,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   validateInputs();
+  sendData();
 });
 
 const setError = (element, message) => {
@@ -87,24 +88,48 @@ const validateInputs = () => {
   && (isValidEmail(emailValue)) 
   && (subjectValue.length >= 15)
   && (messageValue.length >= 25)) {
-    //alert("Submission is successfull");
     success.innerHTML = `<h2 class="success">Message is sent</h2>`;
-    /*
-    nextPage.innerHTML = 
-    `<div class="contact_buttons">
-      <button 
-        class="button" 
-        id="button_clear" 
-        type="reset"
-        onclick="window.location.href='../html/contact.html'">Back</button>
-      <button 
-        class="button" 
-        id="button_submit" 
-        type="submit"
-        onclick="window.location.href='../html/success.html'">Next</button>
-    </div>`;*/
   }
 };
+
+/*
+  Send form to wordpress
+*/
+
+const sendData = () => {
+  const contactUrl = "https://exam1.aks-faret.no/wp-json/wp/v2/contact";
+
+  // Prepare to send data
+  let contactData = {
+    fullname: fullname,
+    email: email,
+    subject: subject,
+    message: message
+  }
+
+  // send data to wordpress contact post
+  fetch(contactUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(contactData)
+  })
+  .then(function(response) {
+    if (response.ok) {
+      console.log("Contact data sent successfully");
+      // Resets the form
+      document.querySelector(".contact_form").reset();
+    } else {
+      throw new Error("Error submitting form");
+    }
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+}
+
+
 
 /*
   Regex codes (trials)

@@ -32,12 +32,12 @@ main {
 }
 
 .big_text {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.1em;
   color: #ffffff;
 }
 
 .small_text {
+  font-size: 1.1em;
   margin: 10px auto 40px auto;
   color: #ffffff;
 }
@@ -92,6 +92,7 @@ main {
 }
 
 .input_box {
+  font-family: 'inter', sans-serif;
   width: 100%;
   height: 40px;
   border-color: #7b7b7b;
@@ -109,7 +110,6 @@ main {
 
 /* Error messages */
 .form_error {
-  /*display: none;*/
   font-family: 'inter', sans-serif;
   color: #ee0000;
   text-align: left;
@@ -130,7 +130,6 @@ main {
     margin: -10px 0 10px 5%;
   }
 }
-
 
 /* contact buttons */
 .contact_buttons {
