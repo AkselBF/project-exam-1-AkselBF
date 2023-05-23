@@ -59,8 +59,35 @@ function renderData(water) {
 */
 
 // Search bar
+/*
+const searchInput = document.getElementById("searchBar");
+const searchResults = document.getElementById("searchResults");
 
+// Function to perform the search
+const performSearch = async () => {
+  // Clear previous search results
+  searchResults.innerHTML = '';
 
+  // Fetch data from API link
+  const response = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
+  const data = await response.json();
+
+  // Get the search query
+  const query = searchInput.value.toLowerCase();
+
+  // Filter posts by title
+  const filteredPosts = data.posts.filter(post =>
+    post.title.toLowerCase().includes(query)
+  );
+
+  // Display search results
+  filteredPosts.forEach(post => {
+    const postElement = document.createElement("div");
+    postElement.textContent = post.title;
+    searchResults.appendChild(postElement);
+  });
+};
+*/
 /*
 const searchInput = document.querySelector(".search_bar");
 let users = [];
@@ -102,14 +129,46 @@ items.forEach(item => {
     let checkText = document.querySelector(".filter_intro");
     console.log(checked, checkText);
     //checkItem();
+    filterPosts();
   });
 });
-/*
-function checkItem() {
-  if (document.querySelector("#check_newest").checked = true) {
-    const sortPosts = document.querySelector(".blog_posts").sort((a, b) => a)
-  }
-}*/
+
+// Function to filter posts with search and checkboxes
+const searchInput = document.querySelector(".search_bar");
+const checkboxes = document.querySelectorAll(".checkbox");
+const filteredPost = document.querySelector(".filtered_posts");
+let postsData = [];
+
+const filterPosts = () => {
+  filteredPost.innerHTML = '';
+
+  const query = searchInput.ariaValueMax.toLowerCase();
+
+  const checkedValues = Array.from(checkboxes)
+  .filter(checkbox => checkbox.checked)
+  .map(checkbox => checkbox.value);
+
+  // Filter and sort posts
+  const filteredAndSortedPosts = postsData.filter(post =>
+    (query === '' || post.title.toLowerCase().includes(query)) &&
+    (checkedValues.length === 0 || checkedValues.includes(post.category))
+  ).sort((a, b) => {
+    if (checkedValues.includes('newest')) {
+      return new Date(b.date) - new Date(a.date);
+    } else if (checkedValues.includes('oldest')) {
+      return new Date(a.date) - new Date(b.date);
+    } else {
+      return 0;
+    }
+  });
+
+  // Display filtered and sorted posts
+  filteredAndSortedPosts.forEach(post => {
+    const postElement = document.createElement('div');
+    postElement.textContent = post.title;
+    filteredPosts.appendChild(postElement);
+  });
+}
 
 
 /*

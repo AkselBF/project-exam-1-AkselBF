@@ -19,7 +19,19 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   validateInputs();
-  sendData();
+  //sendData();
+
+  /*
+  const contactData = new FormData(form);
+  const contact = new URLSearchParams(contactData);
+
+  fetch("https://exam1.aks-faret.no/wp-json/wp/v2/contact", {
+    method: "POST",
+    body: contact,
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));*/
 });
 
 const setError = (element, message) => {
@@ -96,6 +108,7 @@ const validateInputs = () => {
   Send form to wordpress
 */
 
+/*
 const contact = JSON.stringify({
   //Information
   fullname: fullname,
@@ -119,7 +132,7 @@ async function sendData() {
   const contactData = await res.json();
   console.log(contactData);
 }
-
+*/
 /*
 const sendData = () => {
   const contactUrl = "https://exam1.aks-faret.no/wp-json/wp/v2/contact";
