@@ -5,7 +5,7 @@
 
 async function getData() {
   try {
-    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
+    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water?_embed&per_page=20");
     const data = await url.json();
 
     console.log(data);
@@ -98,12 +98,18 @@ items.forEach(item => {
   item.addEventListener("click", () => {
     item.classList.toggle("checked");
 
-    // Later (Not necessary)
     let checked = document.querySelectorAll(".checked");
     let checkText = document.querySelector(".filter_intro");
     console.log(checked, checkText);
+    //checkItem();
   });
 });
+/*
+function checkItem() {
+  if (document.querySelector("#check_newest").checked = true) {
+    const sortPosts = document.querySelector(".blog_posts").sort((a, b) => a)
+  }
+}*/
 
 
 /*

@@ -96,6 +96,31 @@ const validateInputs = () => {
   Send form to wordpress
 */
 
+const contact = JSON.stringify({
+  //Information
+  fullname: fullname,
+  email: email,
+  subject: subject,
+  message: message
+});
+
+async function sendData() {
+  console.log("contact sumbition running");
+  const res = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/contact", 
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: contact,
+  });
+
+  console.log(res);
+  const contactData = await res.json();
+  console.log(contactData);
+}
+
+/*
 const sendData = () => {
   const contactUrl = "https://exam1.aks-faret.no/wp-json/wp/v2/contact";
 
@@ -119,7 +144,7 @@ const sendData = () => {
     if (response.ok) {
       console.log("Contact data sent successfully");
       // Resets the form
-      document.querySelector(".contact_form").reset();
+      form.reset();
     } else {
       throw new Error("Error submitting form");
     }
@@ -128,18 +153,4 @@ const sendData = () => {
     console.log(error);
   });
 }
-
-
-
-/*
-  Regex codes (trials)
 */
-// Letters and numbers: const regex = /^[a-zA-Z0-9 ]{10,}+$/;
-
-// E-mail: const regEx = /@/;
-// E-mail: const regEx = /\S+@\S+\.\S+/;
-// E-mail: const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-// E-mail: const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-// Address: const regex = /\w\s\w/;
-// Address: const regex = /^[a-zA-Z0-9 ]{5,}+$/;

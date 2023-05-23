@@ -47,6 +47,7 @@ main {
   width: 80%;
   margin: auto;
   padding: 30px 0 20px 0;
+  border-radius: 15px;
 }
 
 
@@ -89,6 +90,7 @@ main {
 .success {
   color: #09c372;
   margin-bottom: 20px;
+  font-size: 1.25em;
 }
 
 .input_box {
