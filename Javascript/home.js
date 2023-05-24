@@ -17,15 +17,15 @@ widthProgress.addEventListener("scroll", function() {
   //console.log(scrollPercent);
 
   if (scrollPercent === 0) {
-    previous.style.display = "none";
+    previous.style.color = "#fafafa";
   } else {
-    previous.style.display = "block";
+    previous.style.color = "#000000";
   }
 
   if (scrollPercent >= 99) {
-    next.style.display = "none";
+    next.style.color = "#fafafa";
   } else {
-    next.style.display = "block";
+    next.style.color = "#000000";
   }
 });
 
