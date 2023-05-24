@@ -88,6 +88,8 @@ main .specific_title {
 .image {
   margin: auto;
   width: 85%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 /* Media querries for text and image */
@@ -107,6 +109,9 @@ main .specific_title {
     margin: 20px auto 30px auto;
   }
 }
+
+/* Modal */
+
 
 
 footer .specific_title {

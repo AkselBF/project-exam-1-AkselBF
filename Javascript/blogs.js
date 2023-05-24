@@ -59,61 +59,6 @@ function renderData(water) {
   Filter
 */
 
-// Search bar
-/*
-const searchInput = document.getElementById("searchBar");
-const searchResults = document.getElementById("searchResults");
-
-// Function to perform the search
-const performSearch = async () => {
-  // Clear previous search results
-  searchResults.innerHTML = '';
-
-  // Fetch data from API link
-  const response = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
-  const data = await response.json();
-
-  // Get the search query
-  const query = searchInput.value.toLowerCase();
-
-  // Filter posts by title
-  const filteredPosts = data.posts.filter(post =>
-    post.title.toLowerCase().includes(query)
-  );
-
-  // Display search results
-  filteredPosts.forEach(post => {
-    const postElement = document.createElement("div");
-    postElement.textContent = post.title;
-    searchResults.appendChild(postElement);
-  });
-};
-*/
-/*
-const searchInput = document.querySelector(".search_bar");
-let users = [];
-
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase();
-  users.forEach(user => {
-    const isVisible = `${water.title.rendered}`.includes(value);
-    user.element.classList.toggle("hide", !isVisible);
-  })
-})
-
-async function getSearch() {
-  try {
-    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water");
-    const data = await url.json();
-
-    console.log(data);
-    data.forEach((water) => renderData(water));
-
-  } catch (error) {
-    console.log(error);
-  }
-}*/
-
 // Checkboxes
 const filterButton = document.querySelector(".blog_filter_mobile");
 const items = document.querySelectorAll(".desktop_item");
@@ -129,7 +74,6 @@ items.forEach(item => {
     let checked = document.querySelectorAll(".checked");
     let checkText = document.querySelector(".filter_intro");
     console.log(checked, checkText);
-    //checkItem();
     filterPosts();
   });
 });
@@ -141,6 +85,7 @@ const filteredPost = document.querySelector(".filtered_posts");
 let searchValue = "";
 let postsData = [];
 
+// Search
 async function blogSearch() {
   const response = await fetch(waterUrl + "?search=" + searchValue);
   const result = await response.json();
@@ -156,12 +101,12 @@ searchInput.addEventListener("onkeyup", () => {
   blogSearch();
 })
 
+// Filter and sort posts
 const filterPosts = () => {
   const checkedValues = Array.from(checkboxes)
   .filter(checkbox => checkbox.checked)
   .map(checkbox => checkbox.value);
 
-  // Filter and sort posts
   const filteredAndSortedPosts = postsData.filter(post =>
     (query === '' || post.title.toLowerCase().includes(query)) &&
     (checkedValues.length === 0 || checkedValues.includes(post.category))

@@ -108,6 +108,7 @@ main {
 #input_message {
   height: 160px;
   border: solid 2px #7b7b7b;
+  resize: none;
 }
 
 /* Error messages */

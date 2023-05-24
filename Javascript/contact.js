@@ -95,12 +95,11 @@ const validateInputs = () => {
   }
 };
 
-const userName = "contact";
-const password = "jM9Q dbpb Tm07 iZya Pozw BXuq"
-
 async function postData() {
 
-  console.log();
+  const username = "exam1.aks-faret.no";
+  const password = "jM9Q dbpb Tm07 iZya Pozw BXuq";
+
   const contactInfo = JSON.stringify({
     fullname: document.querySelector("#input_name").value,
     email: document.querySelector("#input_mail").value,
@@ -115,6 +114,7 @@ async function postData() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json; charset=UTF-8",
+        Authorization: "Basic " + btoa(username + ":" + password)
 			},
 			body: contactInfo,
 		}
