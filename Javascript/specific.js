@@ -26,6 +26,7 @@ async function fetchPost() {
     createImage(water);
     createTitle(water);
     createDetails(water);
+    //createModal(water);
 
   } catch (error) {
     console.log(error);
@@ -51,9 +52,27 @@ function createDetails(water) {
     <div class="specific_description">
       <p class="description_text">${water.content.rendered}</p>
     </div>
-
+  
     <div class="specific_image">
-      <img class="image" src="${water.acf.image3}">
+      <img class="image" src="${water.acf.image3}" onclick="openModal(this)">
     </div>
   `;
+}
+
+// Open the modal and display the clicked image
+function openModal(image) {
+  const modal = document.querySelector(".modal");
+  const modalImg = document.querySelector(".modal_image");
+
+  modal.style.display = "block";
+  modalImg.src = image.src;
+}
+
+// Close the modal when the user clicks on the close button (X)
+document.querySelector(".modal_close").addEventListener("click", closeModal);
+
+// Close the modal
+function closeModal() {
+  const modal = document.querySelector(".modal");
+  modal.style.display = "none";
 }
