@@ -2,10 +2,11 @@
 /*
   Fetch api data
 */
+const waterUrl = "https://exam1.aks-faret.no/wp-json/wp/v2/water";
 
 async function getData() {
   try {
-    const url = await fetch("https://exam1.aks-faret.no/wp-json/wp/v2/water?_embed&per_page=20");
+    const url = await fetch(waterUrl + "?_embed&per_page=20");
     const data = await url.json();
 
     console.log(data);
@@ -137,13 +138,25 @@ items.forEach(item => {
 const searchInput = document.querySelector(".search_bar");
 const checkboxes = document.querySelectorAll(".checkbox");
 const filteredPost = document.querySelector(".filtered_posts");
+let searchValue = "";
 let postsData = [];
 
+async function blogSearch() {
+  const response = await fetch(waterUrl + "?search=" + searchValue);
+  const result = await response.json();
+  console.log(result);
+
+  result.results.forEach((water) => renderData(water));
+}
+
+searchInput.addEventListener("onkeyup", () => {
+  searchValue = searchInput.value;
+  console.log(searchValue);
+
+  blogSearch();
+})
+
 const filterPosts = () => {
-  filteredPost.innerHTML = '';
-
-  const query = searchInput.ariaValueMax.toLowerCase();
-
   const checkedValues = Array.from(checkboxes)
   .filter(checkbox => checkbox.checked)
   .map(checkbox => checkbox.value);
