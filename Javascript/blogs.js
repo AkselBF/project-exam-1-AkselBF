@@ -85,30 +85,69 @@ items.forEach(item => {
 // Search posts
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search_bar");
-  const resultsList = document.querySelector(".search_results");
+  const blogPostsList = document.querySelector(".blog_posts");
+  //const showMoreButton = document.querySelector(".blog_button");
 
   searchInput.addEventListener('keyup', () => handleSearch(waterUrl + "?_embed&per_page=20"));
 
-  function handleSearch(searchUrl) {
+  function handleSearch(url) {
     const searchText = searchInput.value.toLowerCase();
-    resultsList.innerHTML = "";
+    blogPostsList.innerHTML = ''; // Clear previous results
+    //showMoreButton.disabled = true;
 
-    fetch(searchUrl)
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         const matchedPosts = data.filter(post => post.acf.blog_post.toLowerCase().includes(searchText));
         matchedPosts.forEach(post => {
           const li = document.createElement('li');
-          const postTitle = document.createElement('h3');
-          const postContent = document.createElement('p');
+          li.classList.add('blog');
 
-          postTitle.textContent = post.title.rendered;
-          postContent.innerHTML = post.content.rendered;
+          const link = document.createElement('a');
+          link.href = `../HTML/specific.html?id=${post.id}`;
 
-          li.appendChild(postTitle);
-          li.appendChild(postContent);
-          resultsList.appendChild(li);
+          const image = document.createElement('img');
+          image.classList.add('blog_image');
+          image.src = post.acf.image;
+          image.alt = 'Image for blog';
+
+          const description = document.createElement('div');
+          description.classList.add('blog_description');
+
+          const title = document.createElement('h3');
+          title.classList.add('blog_desc_text');
+          title.textContent = post.acf.blog_post;
+
+          const line = document.createElement('div');
+          line.classList.add('blog_line');
+
+          const dateAndMore = document.createElement('div');
+          dateAndMore.classList.add('blog_date_and_more');
+
+          const date = document.createElement('p');
+          date.classList.add('blog_desc_date');
+          date.textContent = post.acf.date;
+
+          const more = document.createElement('p');
+          more.classList.add('blog_desc_more');
+          more.textContent = 'Read more >';
+
+          dateAndMore.appendChild(date);
+          dateAndMore.appendChild(more);
+
+          description.appendChild(title);
+          description.appendChild(line);
+          description.appendChild(dateAndMore);
+
+          link.appendChild(image);
+          link.appendChild(description);
+
+          li.appendChild(link);
+
+          blogPostsList.appendChild(li);
         });
+
+        //showMoreButton.disabled = false;
       })
       .catch(error => {
         console.error('Error:', error);
