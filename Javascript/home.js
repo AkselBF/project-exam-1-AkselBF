@@ -80,6 +80,4 @@ function renderData(water) {
     </li>
   `;
   }
-
-  // if (`${water.acf.type}` === "Hidden") {}
 }

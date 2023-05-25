@@ -74,62 +74,47 @@ items.forEach(item => {
     let checked = document.querySelectorAll(".checked");
     let checkText = document.querySelector(".filter_intro");
     console.log(checked, checkText);
-    //filterPosts();
   });
 });
 
 
-// Function to filter posts with search and checkboxes
-
-//let searchValue = "";
-//let postsData = [];
-const searchInput = document.querySelector(".search_bar");
-
-searchInput.addEventListener("keyup", () => {
-  console.log(searchInput.value);
-}) 
 /*
-const searchValue = searchInput.value.toLowerCase();
-  const blogContainer = document.querySelector(".blog_posts");
-
-  if (searchValue !== "") {
-    blogContainer.style.display = "flex";
-  } else {
-    blogContainer.style.display = "none";
-  }
-
-  console.log(searchValue);
-  blogContainer.innerHTML = "";
-
-  getData();
+  Function to filter posts with search and checkboxes
 */
 
-/*
-let render_lists = function(water){
-  var li = "";
-  for(index in water){
-    li += "<li>" + water[index] + "</li>";
+// Search posts
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector(".search_bar");
+  const resultsList = document.querySelector(".search_results");
+
+  searchInput.addEventListener('keyup', () => handleSearch(waterUrl + "?_embed&per_page=20"));
+
+  function handleSearch(searchUrl) {
+    const searchText = searchInput.value.toLowerCase();
+    resultsList.innerHTML = "";
+
+    fetch(searchUrl)
+      .then(response => response.json())
+      .then(data => {
+        const matchedPosts = data.filter(post => post.acf.blog_post.toLowerCase().includes(searchText));
+        matchedPosts.forEach(post => {
+          const li = document.createElement('li');
+          const postTitle = document.createElement('h3');
+          const postContent = document.createElement('p');
+
+          postTitle.textContent = post.title.rendered;
+          postContent.innerHTML = post.content.rendered;
+
+          li.appendChild(postTitle);
+          li.appendChild(postContent);
+          resultsList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
-  ul.innerHTML = li;
-}
-
-render_lists(users);
-
-// lets filters it
-const searchInput = document.querySelector(".search_bar");
-
-const filterText = function(event){
-  keyword = input.value.toLowerCase();
-  filtered_users = users.filter(function(user){
-        user = user.toLowerCase();
-       return user.indexOf(keyword) > -1; 
-  });
-  
-  render_lists(filtered_users);
-}
-
-input.addEventListener('keyup', filterUsers);
-*/
+})
 
 
 // Filter and sort posts
