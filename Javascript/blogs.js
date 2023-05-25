@@ -81,19 +81,18 @@ items.forEach(item => {
 
 // Function to filter posts with search and checkboxes
 
-let searchValue = "";
+//let searchValue = "";
 //let postsData = [];
 const searchInput = document.querySelector(".search_bar");
-const blogTitle = document.querySelector(".blog_desc_text");
-const checkboxes = document.querySelectorAll(".checkbox");
-const filteredPost = document.querySelector(".filtered_posts");
-//const searchContainer = document.querySelector(".search_results");
 
 searchInput.addEventListener("keyup", () => {
-  const searchValue = searchInput.value.toLowerCase();
-  const blogContainer = document.querySelector(".blog");
+  console.log(searchInput.value);
+}) 
+/*
+const searchValue = searchInput.value.toLowerCase();
+  const blogContainer = document.querySelector(".blog_posts");
 
-  if (searchValue === "") {
+  if (searchValue !== "") {
     blogContainer.style.display = "flex";
   } else {
     blogContainer.style.display = "none";
@@ -103,10 +102,7 @@ searchInput.addEventListener("keyup", () => {
   blogContainer.innerHTML = "";
 
   getData();
-}) 
-
-
-
+*/
 
 /*
 let render_lists = function(water){
