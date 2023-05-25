@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const blogPostsList = document.querySelector(".blog_posts");
   //const showMoreButton = document.querySelector(".blog_button");
 
-  searchInput.addEventListener('keyup', () => handleSearch(waterUrl + "?_embed&per_page=20"));
+  searchInput.addEventListener('keyup', () => handleSearch(waterUrl));
 
   function handleSearch(url) {
     const searchText = searchInput.value.toLowerCase();
@@ -155,35 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-
 // Filter and sort posts
-/*
-const filterPosts = () => {
-  const checkedValues = Array.from(checkboxes)
-  .filter(checkbox => checkbox.checked)
-  .map(checkbox => checkbox.value);
 
-  const filteredAndSortedPosts = postsData.filter(post =>
-    (query === '' || post.title.toLowerCase().includes(query)) &&
-    (checkedValues.length === 0 || checkedValues.includes(post.category))
-  ).sort((a, b) => {
-    if (checkedValues.includes('newest')) {
-      return new Date(b.date) - new Date(a.date);
-    } else if (checkedValues.includes('oldest')) {
-      return new Date(a.date) - new Date(b.date);
-    } else {
-      return 0;
-    }
-  });
 
-  // Display filtered and sorted posts
-  filteredAndSortedPosts.forEach(post => {
-    const postElement = document.createElement('div');
-    postElement.textContent = post.title;
-    filteredPosts.appendChild(postElement);
-  });
-}
-*/
 
 /*
   See more button
