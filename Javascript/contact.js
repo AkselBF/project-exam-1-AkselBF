@@ -101,10 +101,14 @@ async function postData() {
   const password = "jM9Q dbpb Tm07 iZya Pozw BXuq";
 
   const contactInfo = JSON.stringify({
-    fullname: document.querySelector("#input_name").value,
-    email: document.querySelector("#input_mail").value,
-    subject: document.querySelector("#input_subject").value,
-    message: document.querySelector("#input_message").value
+    title: document.querySelector("#input_name").value,
+    status: "publish",
+    acf: {
+      fullname: document.querySelector("#input_name").value,
+      email: document.querySelector("#input_mail").value,
+      subject: document.querySelector("#input_subject").value,
+      message: document.querySelector("#input_message").value
+    }
   });
 
 	console.log("post running");

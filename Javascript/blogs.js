@@ -74,34 +74,70 @@ items.forEach(item => {
     let checked = document.querySelectorAll(".checked");
     let checkText = document.querySelector(".filter_intro");
     console.log(checked, checkText);
-    filterPosts();
+    //filterPosts();
   });
 });
 
+
 // Function to filter posts with search and checkboxes
+
+let searchValue = "";
+//let postsData = [];
 const searchInput = document.querySelector(".search_bar");
+const blogTitle = document.querySelector(".blog_desc_text");
 const checkboxes = document.querySelectorAll(".checkbox");
 const filteredPost = document.querySelector(".filtered_posts");
-let searchValue = "";
-let postsData = [];
+//const searchContainer = document.querySelector(".search_results");
 
-// Search
-async function blogSearch() {
-  const response = await fetch(waterUrl + "?search=" + searchValue);
-  const result = await response.json();
-  console.log(result);
+searchInput.addEventListener("keyup", () => {
+  const searchValue = searchInput.value.toLowerCase();
+  const blogContainer = document.querySelector(".blog");
 
-  result.results.forEach((water) => renderData(water));
+  if (searchValue === "") {
+    blogContainer.style.display = "flex";
+  } else {
+    blogContainer.style.display = "none";
+  }
+
+  console.log(searchValue);
+  blogContainer.innerHTML = "";
+
+  getData();
+}) 
+
+
+
+
+/*
+let render_lists = function(water){
+  var li = "";
+  for(index in water){
+    li += "<li>" + water[index] + "</li>";
+  }
+  ul.innerHTML = li;
 }
 
-searchInput.addEventListener("onkeyup", () => {
-  searchValue = searchInput.value;
-  console.log(searchValue);
+render_lists(users);
 
-  blogSearch();
-})
+// lets filters it
+const searchInput = document.querySelector(".search_bar");
+
+const filterText = function(event){
+  keyword = input.value.toLowerCase();
+  filtered_users = users.filter(function(user){
+        user = user.toLowerCase();
+       return user.indexOf(keyword) > -1; 
+  });
+  
+  render_lists(filtered_users);
+}
+
+input.addEventListener('keyup', filterUsers);
+*/
+
 
 // Filter and sort posts
+/*
 const filterPosts = () => {
   const checkedValues = Array.from(checkboxes)
   .filter(checkbox => checkbox.checked)
@@ -127,7 +163,7 @@ const filterPosts = () => {
     filteredPosts.appendChild(postElement);
   });
 }
-
+*/
 
 /*
   See more button
