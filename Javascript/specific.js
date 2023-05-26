@@ -82,6 +82,36 @@ function closeModal() {
   Comments
 */
 
+// Click on logo to get comment textarea
+const commentBackground = document.querySelector(".comment_background");
+const commentSection = document.querySelector(".commentSection");
+const commentText = document.querySelector(".comment_text");
+
+function toggleComments() {
+  if (commentSection.style.display = "none") {
+    commentSection.style.display = "block";
+    commentBackground.style.display = "block";
+
+    commentText.focus();
+  } else {
+    commentSection.style.display = "none";
+    commentBackground.style.display = "none";
+
+    commentText.value = "";
+  }
+}
+
+function submitComment() {
+  const commentary = commentText.value;
+
+  const postId = "<?php echo get_the_ID(); ?>";
+
+  const commentData = {
+    post: postId,
+    content: commentary
+  }
+}
+
 // Fetch api
 //const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
 async function showPost() {
