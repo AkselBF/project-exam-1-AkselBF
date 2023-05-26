@@ -86,7 +86,7 @@ main .specific_title {
 }
 
 .image {
-  margin: auto;
+  margin: auto auto 30px auto;
   width: 85%;
   cursor: pointer;
   transition: 0.3s;
@@ -114,7 +114,9 @@ main .specific_title {
   }
 }
 
-/* Modal */
+/* 
+  Modal for small image
+*/
 .modal {
   display: none;
   position: fixed;
@@ -173,6 +175,41 @@ main .specific_title {
 }
 
 
+/*
+  Comment section
+*/
+.comment_background {
+  display: none;
+}
+
+.comment_section {
+  display: none;
+}
+
+.comment_container {
+  width: 84%;
+  margin: 0 auto 30px auto;
+  padding-bottom: 30px;
+}
+
+.comment_logo {
+  width: 60px;
+  height: 60px;
+  background-color: #0074D9;
+  border-radius: 200px;
+  justify-content: center;
+  float: right;
+}
+
+.fa-message {
+  padding-top: 30px;
+  margin: auto;
+  color: #ffffff;
+}
+
+/*
+  Footer
+*/
 footer .specific_title {
   color: #ffffff;
   text-decoration: none;

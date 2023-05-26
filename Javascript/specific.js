@@ -76,3 +76,41 @@ function closeModal() {
   const modal = document.querySelector(".modal");
   modal.style.display = "none";
 }
+
+
+/*
+  Comments
+*/
+
+// Fetch api
+//const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
+async function showPost() {
+  const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
+  const data = await response.json();
+  console.log(data);
+
+  //showComments(data);
+}
+
+showPost();
+/*
+function showComments(data) {
+  if (!data.length) {
+    console.log("hey");
+  }
+
+  const comment = document.querySelector(".comment_text");
+
+  data.forEach((comments) => {
+    comment.innerHTML = `
+      <div class="comment_source">
+        <div class="source_name">
+          <h3>${comments.author_name}</h3>
+        </div>
+        <div class="source_text">
+          <p>${comments.content.rendered}</p>
+        </div>
+      </div>
+    `;
+  })
+}*/
