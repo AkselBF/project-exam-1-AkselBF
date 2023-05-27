@@ -127,7 +127,6 @@ main .specific_title {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #000000;
   background-color: #000000e6;
 }
 
@@ -184,7 +183,7 @@ main .specific_title {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000000c8;
   z-index: 99;
   display: none;
 }
@@ -194,18 +193,48 @@ main .specific_title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: #fff;
+  width: 600px;
+  height: 400px;
+  background-color: #3b3b3b;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   display: none;
   z-index: 100;
 }
 
+.comment_title {
+  color: #ffffff;
+  font-family: 'inter', sans-serif;
+}
+
+.comment_text {
+  width: 80%;
+  height: 100px;
+  margin: 30px auto;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #3b3b3b;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  resize: none;
+  font-family: 'inter', sans-serif;
+  list-style-type: none;
+}
+
 .comment_container {
-  width: 84%;
+  width: 85%;
   margin: 0 auto 30px auto;
   padding-bottom: 30px;
+}
+
+.comment_close {
+  float: right;
+  cursor: pointer;
+  margin: -12px -5px 10px 10px;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .comment_logo {

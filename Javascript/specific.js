@@ -81,14 +81,30 @@ function closeModal() {
 /*
   Comments
 */
-
-// Click on logo to get comment textarea
+const commentSection = document.querySelector(".comment_section");
 const commentBackground = document.querySelector(".comment_background");
-const commentSection = document.querySelector(".commentSection");
 const commentText = document.querySelector(".comment_text");
 
-function toggleComments() {
-  if (commentSection.style.display = "none") {
+// Click on logo to get comment textarea
+function openComments() {
+  commentSection.style.display = "block";
+  commentBackground.style.display = "block";
+}
+
+document.querySelector(".comment_close").addEventListener("click", closeComments);
+
+function closeComments() {
+  commentSection.style.display = "none";
+  commentBackground.style.display = "none";
+}
+
+/*
+const commentBackground = document.querySelector(".comment_background");
+const commentSection = document.querySelector(".comment_section");
+const commentText = document.querySelector(".comment_text");
+
+function openComments() {
+  if (commentSection.style.display === "none") {
     commentSection.style.display = "block";
     commentBackground.style.display = "block";
 
@@ -99,7 +115,7 @@ function toggleComments() {
 
     commentText.value = "";
   }
-}
+}*/
 
 function submitComment() {
   const commentary = commentText.value;
