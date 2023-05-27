@@ -193,13 +193,32 @@ main .specific_title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 80%;
   height: 400px;
   background-color: #3b3b3b;
   padding: 20px;
   border-radius: 10px;
   display: none;
   z-index: 100;
+  justify-content: center;
+  animation-name: slidedown;
+}
+
+/* Adding the animation */
+.comment_section {
+  animation-duration: 0.6s;
+  transition: 0.5s;
+}
+
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    top: 40%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
 }
 
 .comment_title {
@@ -210,7 +229,7 @@ main .specific_title {
 .comment_text {
   width: 80%;
   height: 100px;
-  margin: 30px auto;
+  margin: 30px auto 20px auto;
   padding: 5px;
   color: #ffffff;
   background-color: #3b3b3b;
@@ -218,7 +237,33 @@ main .specific_title {
   border-radius: 5px;
   resize: none;
   font-family: 'inter', sans-serif;
-  list-style-type: none;
+}
+
+.comment_button {
+  padding: 0 40px 0 40px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin: 0 10% 30px 0;
+  justify-content: center;
+  text-align: center;
+  color: #cccccc;
+  background-color: #3b3b3b;
+  border: 2px solid #cccccc;
+  font-family: 'inter', sans-serif;
+}
+
+.comment_button:hover {
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  transition: 0.5s ease-in-out;
+}
+
+.comment_text, .comment_button {
+  display: flex;
+  flex-direction: column;
 }
 
 .comment_container {
@@ -232,7 +277,7 @@ main .specific_title {
   cursor: pointer;
   margin: -12px -5px 10px 10px;
   color: #f1f1f1;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -251,6 +296,25 @@ main .specific_title {
   padding-top: 30px;
   margin: auto;
   color: #ffffff;
+}
+
+/* Media querries for comments */
+@media (min-width: 1000px) {
+  .comment_section {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .comment_section {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1286px) {
+  .comment_section {
+    width: 40%;
+  }
 }
 
 

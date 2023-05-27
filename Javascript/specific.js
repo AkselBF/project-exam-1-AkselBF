@@ -98,25 +98,6 @@ function closeComments() {
   commentBackground.style.display = "none";
 }
 
-/*
-const commentBackground = document.querySelector(".comment_background");
-const commentSection = document.querySelector(".comment_section");
-const commentText = document.querySelector(".comment_text");
-
-function openComments() {
-  if (commentSection.style.display === "none") {
-    commentSection.style.display = "block";
-    commentBackground.style.display = "block";
-
-    commentText.focus();
-  } else {
-    commentSection.style.display = "none";
-    commentBackground.style.display = "none";
-
-    commentText.value = "";
-  }
-}*/
-
 function submitComment() {
   const commentary = commentText.value;
 
@@ -130,6 +111,7 @@ function submitComment() {
 
 // Fetch api
 //const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
+/*
 async function showPost() {
   const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
   const data = await response.json();
@@ -139,24 +121,49 @@ async function showPost() {
 }
 
 showPost();
+*/
+
+// IMPORTANT:
 /*
-function showComments(data) {
-  if (!data.length) {
-    console.log("hey");
-  }
+  username: "exam1.aks-faret.no"
+  Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
+*/
 
-  const comment = document.querySelector(".comment_text");
+showPost();
 
-  data.forEach((comments) => {
-    comment.innerHTML = `
-      <div class="comment_source">
-        <div class="source_name">
-          <h3>${comments.author_name}</h3>
-        </div>
-        <div class="source_text">
-          <p>${comments.content.rendered}</p>
-        </div>
-      </div>
-    `;
+function submitComment() {
+  // Get the comment text from the textarea
+  const commentText = document.querySelector(".comment_text").value;
+
+  // Create a new comment object
+  const comment = {
+    content: commentText,
+  };
+
+  // Make a POST request to the WordPress comments API
+  fetch("https://exam1.aks-faret.no/wp-json/wp/v2/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(comment),
   })
-}*/
+  .then(response => response.json())
+  .then(newComment => {
+    // Handle the response and display the new comment on the page
+    displayComment(newComment);
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+}
+
+function displayComment(comment) {
+  // Create a new list item for the comment
+  const listItem = document.createElement("li");
+  listItem.textContent = comment.content.rendered;
+
+  // Append the new comment to the comment_posts ul
+  const commentPosts = document.querySelector(".comment_posts");
+  commentPosts.appendChild(listItem);
+}
