@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleSearch(url) {
     const searchText = searchInput.value.toLowerCase();
-    blogPostsList.innerHTML = ''; // Clear previous results
+
+    // Clear previous results
+    blogPostsList.innerHTML = '';
     //showMoreButton.disabled = true;
 
     fetch(url)

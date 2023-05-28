@@ -111,7 +111,7 @@ function submitComment() {
 
 // Fetch api
 //const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
-
+/*
 async function showPost() {
   const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
   const data = await response.json();
@@ -120,8 +120,7 @@ async function showPost() {
   //showComments(data);
 }
 
-showPost();
-
+showPost();*/
 
 // IMPORTANT:
 /*
@@ -129,42 +128,40 @@ showPost();
   Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
 */
 
-/*
-const input = document.querySelector(".comment_form");
+async function postData(event) {
+  event.preventDefault();
 
-input.addEventListener("submit", e => {
-  e.preventDefault();
-
-  postData();
-})
-
-async function postData(water) {
   const username = "exam1.aks-faret.no";
   const password = "sDvY PNVr I5RQ IRdG F529 0Raj";
 
-  const commentary = JSON.stringify({
-    status: "publish",
-    content: {
-      rendered: document.querySelector(".comment_text").value
+  const postId = document.querySelector(".post_id").value;
+  const commentText = document.querySelector(".comment_text").value;
+
+  const comment = {
+    id: postId,
+    content: commentText
+  };
+
+  try {
+    const response = await fetch(
+      "https://exam1.aks-faret.no/wp-json/wp/v2/comments",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Basic " + btoa(username + ":" + password)
+        },
+        body: JSON.stringify(comment)
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Comment submitted successfully:", data);
+    } else {
+      console.error("Error submitting comment. Status:", response.status);
     }
-  });
-
-	console.log("post running");
-
-	const res = await fetch(
-		"https://exam1.aks-faret.no/wp-json/wp/v2/comments",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-        Authorization: "Basic " + btoa(username + ":" + password)
-			},
-			body: commentary,
-		}
-	);
-
-	console.log(res);
-	const data = await res.json();
-	console.log(data);
+  } catch (error) {
+    console.error("An error occurred while sending the request:", error);
+  }
 }
-*/

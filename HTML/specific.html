@@ -70,14 +70,15 @@
       <span class="comment_close">&times;</span>
       <h3 class="comment_title">Place your comments</h3>
 
-      <form class="comment_form" onSubmit={this.handleSubmit.bind(this)}>
+      <form class="comment_form">
+        <input type="hidden" class="post_id" value={POST_ID} />
         <textarea
         class="comment_text"
         rows="5"
         cols="40"
         placeholder="Comment..."></textarea>
       
-        <button class="comment_button">Submit</button>
+        <button class="comment_button" onclick="postData(event)">Submit</button>
       </form>
 
       <ul class="comment_posts"></ul>
