@@ -96,7 +96,6 @@ const validateInputs = () => {
 };
 
 async function postData() {
-
   const username = "exam1.aks-faret.no";
   const password = "jM9Q dbpb Tm07 iZya Pozw BXuq";
 

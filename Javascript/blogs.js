@@ -53,33 +53,11 @@ function renderData(water) {
     </li>
   `;
   }
-} 
-
-/*
-  Filter
-*/
-
-// Checkboxes
-const filterButton = document.querySelector(".blog_filter_mobile");
-const items = document.querySelectorAll(".desktop_item");
-
-filterButton.addEventListener("click", () => {
-  filterButton.classList.toggle("open");
-});
-
-items.forEach(item => {
-  item.addEventListener("click", () => {
-    item.classList.toggle("checked");
-
-    let checked = document.querySelectorAll(".checked");
-    let checkText = document.querySelector(".filter_intro");
-    console.log(checked, checkText);
-  });
-});
+}
 
 
 /*
-  Function to filter posts with search and checkboxes
+  Function to sort posts with search
 */
 
 // Search posts
@@ -150,13 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
         //showMoreButton.disabled = false;
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error("Error: ", error);
       });
   }
 })
-
-// Filter and sort posts
-
 
 
 /*

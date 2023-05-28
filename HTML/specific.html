@@ -70,30 +70,17 @@
       <span class="comment_close">&times;</span>
       <h3 class="comment_title">Place your comments</h3>
 
-      <form class="comment_form" action="<?php echo esc_url( admin_url('comment.php') ); ?>" method="post">
+      <form class="comment_form" onSubmit={this.handleSubmit.bind(this)}>
         <textarea
         class="comment_text"
         rows="5"
         cols="40"
         placeholder="Comment..."></textarea>
-
-        <input type="hidden" name="comment_post_ID" value="<?php echo get_the_ID(); ?>">
       
-        <button class="comment_button" onclick="submitComment()">Submit</button>
-        <!--
-        <?php comment_id_fields(); ?>
-        <?php do_action('comment_form', get_the_ID()); ?>
-      -->
+        <button class="comment_button">Submit</button>
       </form>
 
-      <ul class="comment_posts">
-        <!--
-        <?php
-          $comments = get_comments(array('post_id' => get_the_ID()));
-          wp_list_comments(array('per_page' => 10, 'reverse_top_level' => false), $comments);
-        ?>
-      -->
-      </ul>
+      <ul class="comment_posts"></ul>
     </div>
 
     <div class="comment_container">

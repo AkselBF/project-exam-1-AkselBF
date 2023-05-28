@@ -63,147 +63,15 @@
   }
 }
 
-
-.blog_sections {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-
-/* 
-  filter 
-*/
-
-.blog_filter_mobile {
-  width: 300px;
-  height: 60px;
-  margin: 10px auto;
-  border-radius: 10px;
-  padding: 17px 20px;
-  color: #000000;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 #c8c8c8;
-  display: flex;
-  position: sticky;
-  top: 100px;
-  cursor: pointer;
-}
-
-.filter_intro {
-  margin: auto 50px auto 0;
-  font-size: 1.1em;
-}
-
-.blog_filter_mobile .filter_arrow {
-  margin: auto 0 auto 70px;
-  width: 29px;
-  height: 29px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  background: #0074D9;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.blog_filter_mobile.open .filter_arrow {
-  transform: rotate(-180deg);
-}
-
-
-/* 
-  Filter for desktop version 
-*/
-
-.blog_filter_desktop {
-  width: 300px;
-  margin: 20px auto;
-  padding-bottom: 20px;
-  color: #000000;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 #c8c8c8;
-  border-radius: 10px;
-  list-style-type: none;
-  display: none;
-  position: sticky;
-  top: 180px;
-}
-
 .search_bar {
-  width: 80%;
-  height: 30px;
+  width: 300px;
+  height: 40px;
   margin: 20px auto 10px auto;
-  padding: 0 5px;
+  padding: 0 15px;
   border: 1px solid #c8c8c8;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 16px;
 }
-
-.filter_line {
-  width: 60%;
-  margin: 10px auto 30px auto;
-}
-
-.filter_line::after {
-  content: " ";
-  display: block;
-  border-bottom: 2px solid #c8c8c8;
-}
-
-.desktop_item {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
-  margin: 20px 0 20px 30px;
-}
-
-/* When opening the filter */
-.blog_filter_mobile.open ~ .blog_filter_desktop {
-  display: block;
-}
-
-.desktop_item .checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #c8c8c8;
-  border-radius: 4px;
-  margin-right: 15px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* When clicking on item */
-.checkbox .fa-check {
-  font-size: 12px;
-  color: #0074D9;
-  transform: scale(0);
-  transition: all 0.3s ease-in-out;
-}
-
-.desktop_item.checked .fa-check {
-  transform: scale(1);
-}
-
-.desktop_item.checked .checkbox {
-  background-color: #38a2ff56;
-  border-color: #38a2ff;
-}
-
-.item_text {
-  font-family: 'inter', sans-serif;
-}
-
-/* Media querries for filter */
-@media (min-width: 1000px) {
-  .blog_filter_desktop {
-    margin: 20px auto -120px auto;
-  }
-}
-
 
 /* 
   Blog posts 
@@ -212,6 +80,7 @@
 .post_align {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .blog_posts {
@@ -242,58 +111,44 @@
     margin: auto;
   }
 
+  .blog_posts {
+    margin: 30px auto 30px auto;
+  }
+
   .hidden_posts {
+    margin: -30px auto 30px auto;
     flex-direction: column;
   }
 
-  .hidden_posts > * {
-    /*flex: 0 1 300px;*/
-    margin: auto;
+  .hidden_posts .blog {
+    margin-top: 0;
   }
 }
 
 @media (min-width: 800px) {
   .post_align {
-    margin: auto;
     width: 85%;
+    margin: auto;
+    /*margin: auto 8% auto auto;*/
   }
 
   .blog_posts {
     display: flex;
     flex-wrap: wrap;
+    margin: 30px auto 0 auto;
   }
 
   .hidden_posts {
     flex-wrap: wrap;
-  }
-
-  .blog_posts > * {
-    /*flex: 0 1 300px;*/
-    margin: auto;
-  }
-
-  .hidden_posts > * {
-    flex: 0 1 300px;
+    margin: 0 auto 30px auto;
   }
 }
 
 @media (min-width: 1000px) {
   .post_align {
-    width: 54%;
-    margin: auto 0;
-  }
-
-  .blog_sections {
-    flex-direction: row;
-  }
-
-  .blog_filter {
-    margin-top: 30px;
-    width: 35%;
-  }
-
-  .blog_filter_mobile {
-    margin: 25px auto;
+    width: 70%;
+    margin: auto;
+    /*margin: auto 17% auto auto;*/
   }
 
   .blog_posts {
@@ -304,12 +159,13 @@
     margin: -60px 20px 60px 20px;
   }
 }
-
-@media (min-width: 1200px) {
-  .blog_filter {
-    width: 35%;
+/*
+@media (min-width: 1286px) {
+  .post_align {
+    width: 70%;
+    margin: auto 16.5% auto auto;
   }
-}
+}*/
 
 .blog {
   width: 300px;

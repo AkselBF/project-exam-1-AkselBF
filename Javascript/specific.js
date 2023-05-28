@@ -111,7 +111,7 @@ function submitComment() {
 
 // Fetch api
 //const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
-/*
+
 async function showPost() {
   const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
   const data = await response.json();
@@ -121,7 +121,7 @@ async function showPost() {
 }
 
 showPost();
-*/
+
 
 // IMPORTANT:
 /*
@@ -129,41 +129,42 @@ showPost();
   Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
 */
 
-showPost();
+/*
+const input = document.querySelector(".comment_form");
 
-function submitComment() {
-  // Get the comment text from the textarea
-  const commentText = document.querySelector(".comment_text").value;
+input.addEventListener("submit", e => {
+  e.preventDefault();
 
-  // Create a new comment object
-  const comment = {
-    content: commentText,
-  };
+  postData();
+})
 
-  // Make a POST request to the WordPress comments API
-  fetch("https://exam1.aks-faret.no/wp-json/wp/v2/comments", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(comment),
-  })
-  .then(response => response.json())
-  .then(newComment => {
-    // Handle the response and display the new comment on the page
-    displayComment(newComment);
-  })
-  .catch(error => {
-    console.error("Error:", error);
+async function postData(water) {
+  const username = "exam1.aks-faret.no";
+  const password = "sDvY PNVr I5RQ IRdG F529 0Raj";
+
+  const commentary = JSON.stringify({
+    status: "publish",
+    content: {
+      rendered: document.querySelector(".comment_text").value
+    }
   });
-}
 
-function displayComment(comment) {
-  // Create a new list item for the comment
-  const listItem = document.createElement("li");
-  listItem.textContent = comment.content.rendered;
+	console.log("post running");
 
-  // Append the new comment to the comment_posts ul
-  const commentPosts = document.querySelector(".comment_posts");
-  commentPosts.appendChild(listItem);
+	const res = await fetch(
+		"https://exam1.aks-faret.no/wp-json/wp/v2/comments",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+        Authorization: "Basic " + btoa(username + ":" + password)
+			},
+			body: commentary,
+		}
+	);
+
+	console.log(res);
+	const data = await res.json();
+	console.log(data);
 }
+*/
