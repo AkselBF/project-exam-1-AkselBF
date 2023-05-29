@@ -40,7 +40,8 @@ fetchPost();
 
 function createImage(water) {
   heroContainer.innerHTML = `
-    <img class="specific_hero" src="${water.acf.image2}">
+    <img class="specific_hero" src="${water.acf.image2}" 
+    alt="Main image for top of page">
   `;
 }
 
@@ -57,7 +58,8 @@ function createDetails(water) {
     </div>
   
     <div class="specific_image">
-      <img class="image" src="${water.acf.image3}" onclick="openModal(this)">
+      <img class="image" src="${water.acf.image3}" onclick="openModal(this)"
+      alt="Side image and serves as modal">
     </div>
   `;
 }
@@ -101,6 +103,8 @@ function closeComments() {
   commentBackground.style.display = "none";
 }
 
+// Authentication for Comments
+/*
 async function postData(event) {
   event.preventDefault();
 
@@ -142,22 +146,4 @@ async function postData(event) {
     console.error("An error occurred while sending the request:", error);
   }
 }
-
-// Fetch api
-//const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
-/*
-async function showPost() {
-  const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
-  const data = await response.json();
-  console.log(data);
-
-  //showComments(data);
-}
-
-showPost();*/
-
-// IMPORTANT:
-/*
-  username: "exam1.aks-faret.no"
-  Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
 */
