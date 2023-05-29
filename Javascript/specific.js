@@ -135,10 +135,14 @@ async function postData(event) {
   const password = "sDvY PNVr I5RQ IRdG F529 0Raj";
 
   const postId = document.querySelector(".post_id").value;
+  const commentName = document.querySelector(".comment_name").value;
+  const commentMail = document.querySelector(".comment_email").value;
   const commentText = document.querySelector(".comment_text").value;
 
   const comment = {
-    id: postId,
+    author: postId,
+    author_name: commentName,
+    author_email: commentMail,
     content: commentText
   };
 

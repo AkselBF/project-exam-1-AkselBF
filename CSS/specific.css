@@ -226,10 +226,8 @@ main .specific_title {
   font-family: 'inter', sans-serif;
 }
 
-.comment_text {
+.comment_name, .comment_email, .comment_text {
   width: 80%;
-  height: 100px;
-  margin: 30px auto 20px auto;
   padding: 5px;
   color: #ffffff;
   background-color: #3b3b3b;
@@ -237,6 +235,21 @@ main .specific_title {
   border-radius: 5px;
   resize: none;
   font-family: 'inter', sans-serif;
+}
+
+.comment_name {
+  height: 20px;
+  margin: 30px 10% 10px 10%;
+}
+
+.comment_email {
+  height: 20px;
+  margin: 10px auto;
+}
+
+.comment_text {
+  height: 100px;
+  margin: 10px auto 20px auto;
 }
 
 .comment_button {
