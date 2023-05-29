@@ -63,6 +63,11 @@ async function getData() {
 
 getData();
 
+/*
+  Carousel blogs posts
+  Can also be found in Blogs page
+*/
+
 function renderData(water) {
   if (`${water.acf.type}` === "Default") {
     document.querySelector(".blog_posts").innerHTML += `

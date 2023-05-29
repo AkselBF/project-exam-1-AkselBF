@@ -54,6 +54,7 @@ const validateInputs = () => {
   const subjectValue = subject.value.trim();
   const messageValue = message.value.trim();
 
+  // Minimum 5 characters
   if (fullnameValue === '') {
     setError(fullname, 'Full name is required');
   } else if (fullnameValue.length < 5) {
@@ -62,6 +63,7 @@ const validateInputs = () => {
     setSuccess(fullname);
   }
 
+  // Correct email input
   if (emailValue === '') {
     setError(email, 'Email is required');
   } else if (!isValidEmail(emailValue)) {
@@ -70,6 +72,7 @@ const validateInputs = () => {
     setSuccess(email);
   }
 
+  // Minimum 15 characters
   if (subjectValue === '') {
     setError(subject, 'Subject is required');
   } else if (subjectValue.length < 15) {
@@ -78,6 +81,7 @@ const validateInputs = () => {
     setSuccess(subject);
   }
 
+  // Minimum 25 characters
   if (messageValue === '') {
     setError(message, 'Message is required');
   } else if (messageValue.length < 25) {
@@ -95,6 +99,9 @@ const validateInputs = () => {
   }
 };
 
+/*
+  Send form data to wordpress via submit button
+*/
 async function postData() {
   const username = "exam1.aks-faret.no";
   const password = "jM9Q dbpb Tm07 iZya Pozw BXuq";

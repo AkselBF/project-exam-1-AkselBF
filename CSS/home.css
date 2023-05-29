@@ -265,13 +265,8 @@
 }
 
 .carousel_prev {
-  /*display: none;*/
   color: #fafafa;
 }
-/*
-.carousel_next {
-  display: block;
-}*/
 
 /* Buttons hover effects */
 .carousel_prev:hover, .carousel_next:hover {

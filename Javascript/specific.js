@@ -17,19 +17,22 @@ const url = `https://exam1.aks-faret.no/wp-json/wp/v2/water/${postId}`;
 
 
 // Gets the chosen post from previous page
+
 async function fetchPost() {
   try {
     const response = await fetch(url);
-    const water = await response.json();
-    console.log(water);
+    if (response.ok) {
+      const water = await response.json();
+      console.log(water);
 
-    createImage(water);
-    createTitle(water);
-    createDetails(water);
-    //createModal(water);
-
+      createImage(water);
+      createTitle(water);
+      createDetails(water);
+    } else {
+      console.error("Failed to fetch post. Status:", response.status);
+    }
   } catch (error) {
-    console.log(error);
+    console.error("An error occurred while fetching the post:", error);
   }
 }
 
@@ -98,49 +101,19 @@ function closeComments() {
   commentBackground.style.display = "none";
 }
 
-function submitComment() {
-  const commentary = commentText.value;
-
-  const postId = "<?php echo get_the_ID(); ?>";
-
-  const commentData = {
-    post: postId,
-    content: commentary
-  }
-}
-
-// Fetch api
-//const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
-/*
-async function showPost() {
-  const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
-  const data = await response.json();
-  console.log(data);
-
-  //showComments(data);
-}
-
-showPost();*/
-
-// IMPORTANT:
-/*
-  username: "exam1.aks-faret.no"
-  Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
-*/
-
 async function postData(event) {
   event.preventDefault();
 
   const username = "exam1.aks-faret.no";
   const password = "sDvY PNVr I5RQ IRdG F529 0Raj";
 
-  const postId = document.querySelector(".post_id").value;
+  const commentId = document.querySelector(".post_id").value;
   const commentName = document.querySelector(".comment_name").value;
   const commentMail = document.querySelector(".comment_email").value;
   const commentText = document.querySelector(".comment_text").value;
 
   const comment = {
-    author: postId,
+    post: commentId,
     author_name: commentName,
     author_email: commentMail,
     content: commentText
@@ -169,3 +142,22 @@ async function postData(event) {
     console.error("An error occurred while sending the request:", error);
   }
 }
+
+// Fetch api
+//const commentUrl = `https://exam1.aks-faret.no/wp-json/wp/v2/comments?post=${postId}`;
+/*
+async function showPost() {
+  const response = await fetch(`https://exam1.aks-faret.no/wp-json/wp/v2/comments`);
+  const data = await response.json();
+  console.log(data);
+
+  //showComments(data);
+}
+
+showPost();*/
+
+// IMPORTANT:
+/*
+  username: "exam1.aks-faret.no"
+  Password: "sDvY PNVr I5RQ IRdG F529 0Raj"
+*/

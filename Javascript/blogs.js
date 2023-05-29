@@ -19,6 +19,11 @@ async function getData() {
 
 getData();
 
+
+/*
+  Blogs
+*/
+
 function renderData(water) {
   if (`${water.acf.type}` === "Default") {
     document.querySelector(".blog_posts").innerHTML += `
@@ -64,53 +69,52 @@ function renderData(water) {
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search_bar");
   const blogPostsList = document.querySelector(".blog_posts");
-  //const showMoreButton = document.querySelector(".blog_button");
 
+  // Search with every key
   searchInput.addEventListener('keyup', () => handleSearch(waterUrl));
 
   function handleSearch(url) {
     const searchText = searchInput.value.toLowerCase();
 
     // Clear previous results
-    blogPostsList.innerHTML = '';
-    //showMoreButton.disabled = true;
+    blogPostsList.innerHTML = "";
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
         const matchedPosts = data.filter(post => post.acf.blog_post.toLowerCase().includes(searchText));
         matchedPosts.forEach(post => {
-          const li = document.createElement('li');
-          li.classList.add('blog');
+          const li = document.createElement("li");
+          li.classList.add("blog");
 
-          const link = document.createElement('a');
+          const link = document.createElement("a");
           link.href = `../HTML/specific.html?id=${post.id}`;
 
-          const image = document.createElement('img');
-          image.classList.add('blog_image');
+          const image = document.createElement("img");
+          image.classList.add("blog_image");
           image.src = post.acf.image;
-          image.alt = 'Image for blog';
+          image.alt = "Image for blog";
 
-          const description = document.createElement('div');
-          description.classList.add('blog_description');
+          const description = document.createElement("div");
+          description.classList.add("blog_description");
 
-          const title = document.createElement('h3');
-          title.classList.add('blog_desc_text');
+          const title = document.createElement("h3");
+          title.classList.add("blog_desc_text");
           title.textContent = post.acf.blog_post;
 
-          const line = document.createElement('div');
-          line.classList.add('blog_line');
+          const line = document.createElement("div");
+          line.classList.add("blog_line");
 
-          const dateAndMore = document.createElement('div');
-          dateAndMore.classList.add('blog_date_and_more');
+          const dateAndMore = document.createElement("div");
+          dateAndMore.classList.add("blog_date_and_more");
 
-          const date = document.createElement('p');
-          date.classList.add('blog_desc_date');
+          const date = document.createElement("p");
+          date.classList.add("blog_desc_date");
           date.textContent = post.acf.date;
 
-          const more = document.createElement('p');
-          more.classList.add('blog_desc_more');
-          more.textContent = 'Read more >';
+          const more = document.createElement("p");
+          more.classList.add("blog_desc_more");
+          more.textContent = "Read more >";
 
           dateAndMore.appendChild(date);
           dateAndMore.appendChild(more);
@@ -126,8 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           blogPostsList.appendChild(li);
         });
-
-        //showMoreButton.disabled = false;
       })
       .catch(error => {
         console.error("Error: ", error);
